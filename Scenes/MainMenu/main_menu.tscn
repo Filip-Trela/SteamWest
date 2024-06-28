@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfadfkmkila7b"]
+
+[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_uyxau"]
+[ext_resource type="Texture2D" uid="uid://yaa5hx73fa83" path="res://Assets/whiteCircle.png" id="2_0el17"]
+[ext_resource type="PackedScene" uid="uid://cbfvxr8nb2iw6" path="res://Scenes/MainMenu/Controls/main_menu_controls.tscn" id="3_ldarv"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.40826, 0.231376, 0.0859705, 1)
+position = Vector2(357, 798.5)
+scale = Vector2(12.1563, 25.9531)
+texture = ExtResource("1_uyxau")
+
+[node name="Background2" type="Sprite2D" parent="."]
+modulate = Color(0.528629, 0.362492, 0.145348, 1)
+position = Vector2(717, 1336)
+scale = Vector2(14.4844, 14.4844)
+texture = ExtResource("2_0el17")
+
+[node name="MainMenuControls" parent="." instance=ExtResource("3_ldarv")]

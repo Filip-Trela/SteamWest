@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://v43u3xp8anoe"]
+
+[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_6dptq"]
+
+[node name="Combat" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.301105, 0.56451, 0.385807, 1)
+position = Vector2(377.5, 838)
+scale = Vector2(12.7969, 27.1875)
+texture = ExtResource("1_6dptq")
+
+[node name="WhiteTile" type="Sprite2D" parent="."]
+position = Vector2(646, 1250)
+scale = Vector2(13.1875, 12.875)
+texture = ExtResource("1_6dptq")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+modulate = Color(0.60933, 0.60933, 0.60933, 1)
+position = Vector2(64, 1270)
+scale = Vector2(5, 13.625)
+texture = ExtResource("1_6dptq")

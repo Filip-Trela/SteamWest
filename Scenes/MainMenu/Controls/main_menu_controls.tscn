@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbfvxr8nb2iw6"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu/Controls/main_menu_controls.gd" id="1_7y5bq"]
+[ext_resource type="PackedScene" uid="uid://r353qv4e3uoq" path="res://Scenes/MainMenu/Controls/Buttons/start.tscn" id="2_vrbbw"]
+[ext_resource type="PackedScene" uid="uid://bc10xg21moigy" path="res://Scenes/MainMenu/Controls/Buttons/end.tscn" id="3_g6q6p"]
+
+[node name="MainMenuControls" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7y5bq")
+
+[node name="Start" parent="." instance=ExtResource("2_vrbbw")]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 1243.0
+offset_right = 679.0
+offset_bottom = 1345.0
+
+[node name="End" parent="." instance=ExtResource("3_g6q6p")]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 1396.0
+offset_right = 679.0
+offset_bottom = 1498.0
