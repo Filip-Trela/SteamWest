@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ufe2tw26fsg"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Gui/card_handler/card_handler.gd" id="1_yo2ap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ijm8"]
+size = Vector2(759, 566)
+
+[node name="CardHandler" type="Node2D"]
+position = Vector2(360, 1570)
+rotation = -3.14159
+script = ExtResource("1_yo2ap")
+
+[node name="Cards" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 249)
+shape = SubResource("RectangleShape2D_6ijm8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

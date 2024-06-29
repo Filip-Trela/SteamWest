@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7fy2cagoid2m"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Gui/combat_gui.gd" id="1_atmfw"]
+[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_f5bu2"]
+[ext_resource type="PackedScene" uid="uid://c3ufe2tw26fsg" path="res://Scenes/Combat/Gui/card_handler/card_handler.tscn" id="3_72wjv"]
+[ext_resource type="PackedScene" uid="uid://bql1g3w1pjxv7" path="res://Scenes/Combat/Gui/card_selector/card_selector.tscn" id="4_gx4c8"]
+
+[node name="CombatGui" type="CanvasLayer"]
+script = ExtResource("1_atmfw")
+
+[node name="WhiteTile" type="Sprite2D" parent="."]
+modulate = Color(0.775063, 0.775063, 0.775063, 1)
+position = Vector2(354, 1218)
+scale = Vector2(13.1875, 12.875)
+texture = ExtResource("1_f5bu2")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+modulate = Color(0.60933, 0.60933, 0.60933, 1)
+position = Vector2(364, 821.5)
+scale = Vector2(23.625, 0.515625)
+texture = ExtResource("1_f5bu2")
+
+[node name="Visuals2" type="Sprite2D" parent="."]
+modulate = Color(0.776329, 0.551558, 0.420151, 1)
+position = Vector2(364, 922)
+scale = Vector2(23.625, 2.65625)
+texture = ExtResource("1_f5bu2")
+
+[node name="Visuals3" type="Sprite2D" parent="."]
+modulate = Color(0.667486, 0.548467, 0.798852, 1)
+position = Vector2(624.5, 922)
+scale = Vector2(2.23437, 2.65625)
+texture = ExtResource("1_f5bu2")
+
+[node name="Visuals4" type="Sprite2D" parent="."]
+modulate = Color(0.231498, 0.677626, 0.742758, 1)
+position = Vector2(250.5, 922)
+scale = Vector2(7.67187, 2.65625)
+texture = ExtResource("1_f5bu2")
+
+[node name="CardHandler" parent="." instance=ExtResource("3_72wjv")]
+
+[node name="CardSelected" parent="." instance=ExtResource("4_gx4c8")]
+position = Vector2(625, 917)
+
+[node name="Hp" type="ProgressBar" parent="."]
+modulate = Color(1, 0.154376, 0.0737522, 1)
+offset_left = 48.0
+offset_top = 862.0
+offset_right = 179.0
+offset_bottom = 889.0
+rotation = 1.53784
+value = 100.0
+
+[node name="Hp2" type="ProgressBar" parent="."]
+modulate = Color(0.589096, 0.589096, 0.589096, 1)
+offset_left = 95.0
+offset_top = 860.0
+offset_right = 226.0
+offset_bottom = 887.0
+rotation = 1.57989
+value = 100.0
