@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var card_pl = preload("res://Scenes/Combat/Gui/card.tscn")
+@onready var card_pl = preload("res://Scenes/Combat/Gui/Card/card.tscn")
 
 #difference of all card, 360 / nr of cards
 var angle_diff
@@ -22,10 +22,23 @@ var pressed= false
 var dragging = false
 
 @onready var selector = get_parent().get_node("CardSelected")
+@onready var diff_input = get_parent().get_node("DiffInputHandler")
+
+
+
+
+#TESTS
+var cards_file = "res://Cards/card.txt"
+var cards
+var cards_set:Dictionary
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	cards = FileAccess.get_file_as_string(cards_file)
+	cards_set = JSON.parse_string(cards)
+
+
 	card_set_start(15)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,16 +75,23 @@ func card_set_start(nr):
 	angle_diff = deg_to_rad( 360/nr)
 	
 	for number in range(nr):
+		#TODO choosing random card for now
+		var choosen_card = cards_set.keys().pick_random()
 		var card = card_pl.instantiate()
 		
+		
 		#setting information about card
+		card.text_set = cards_set[choosen_card].values()
+		
+		
+		#setting position
 		card.rotation = deg_to_rad(180)
 		card.position = card_pos.rotated(angle_diff * number)
 		card.position.x = card.position.x * card_xy.x
 		card.position.y = card.position.y * card_xy.y
 		
 		$Cards.add_child(card)
-		
+	
 	for card in $Cards.get_children():
 		card["modulate"] = (Color8(177,177,177,255))
 		if high_card:
@@ -114,6 +134,7 @@ func _on_timer_timeout():
 
 func activate():
 	selector.card_selected(high_card)
+	diff_input.start(high_card.text_set[2])
 	
 	visible = false
 	self["process_mode"] = Node.PROCESS_MODE_DISABLED

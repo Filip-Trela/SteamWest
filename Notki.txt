@@ -1,0 +1,26 @@
+TODOS:
+	skonczyc kontrolki DONE
+	
+	stworzyc player postac
+	
+	ogarnac markery do postaci gdy jakies kontrolki
+	
+	ogarnac karte ruchu
+	
+	ogarnac inventory(wszystkie karty w ekwipunku, karty na rece,
+	karty odrzucone)
+	
+	ogarnac interakcje playera z kontrolkami i karta
+	(player cos robi; karta zostaje usunieta z zestawu tymczasowego;)
+	
+	player moe uzywac rot oraz move atak, tak samo jak null
+	
+	ogarnac swiat, enviroment po ktorym postac sie porusza
+	(sciany)
+	
+	trzy typy blokow:
+		kolizja z entity i strzalami
+		kolizja z entity
+		inne(interaktywne, beczki etc)
+		
+	basic enemy, dzialajacy ale bez inteligencji

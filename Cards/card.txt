@@ -1,0 +1,26 @@
+{
+	
+	"basic card":
+		{
+			"description": "Just a basic card with rotating attack",
+			"amount": "4",
+			"type":"rotate"
+		}
+	,
+	
+	"second card":
+		{
+			"description": "Just a basic card with move attack",
+			"amount": "1",
+			"type":"move"
+		}
+	,
+	
+	"third card":
+		{
+			"description": "Just a basic card with null attack",
+			"amount": "41",
+			"type":"null"
+		}
+	
+}

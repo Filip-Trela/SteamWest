@@ -3,7 +3,7 @@ extends Node2D
 
 @onready var handler = get_parent().get_node("CardHandler")
 
-@onready var card_pl = preload("res://Scenes/Combat/Gui/card.tscn")
+@onready var card_pl = preload("res://Scenes/Combat/Gui/Card/card.tscn")
 var card
 
 var choosen_card
@@ -42,11 +42,12 @@ func _input(event):
 	area_input = false
 
 
-func card_selected(card):
+func card_selected(high_card):
 	has_card = true
-	choosen_card = card
+	choosen_card = high_card
 	card = card_pl.instantiate()
 	
+	card.text_set = high_card.text_set
 	card.scale = Vector2(0.3, 0.3)
 	
 	$CardPosition.add_child(card)
@@ -61,8 +62,9 @@ func activate():
 		
 		has_card = false
 		choosen_card = null
-		
 		has_card = false
+		
+		get_parent().get_node("DiffInputHandler").hide_joys()
 
 
 

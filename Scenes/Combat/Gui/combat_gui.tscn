@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7fy2cagoid2m"]
+[gd_scene load_steps=6 format=3 uid="uid://c7fy2cagoid2m"]
 
 [ext_resource type="Script" path="res://Scenes/Combat/Gui/combat_gui.gd" id="1_atmfw"]
 [ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_f5bu2"]
 [ext_resource type="PackedScene" uid="uid://c3ufe2tw26fsg" path="res://Scenes/Combat/Gui/card_handler/card_handler.tscn" id="3_72wjv"]
 [ext_resource type="PackedScene" uid="uid://bql1g3w1pjxv7" path="res://Scenes/Combat/Gui/card_selector/card_selector.tscn" id="4_gx4c8"]
+[ext_resource type="PackedScene" uid="uid://cjbbh70tqcixo" path="res://Scenes/Combat/Gui/DiffInputHandler/diff_input_handler.tscn" id="5_uh8ej"]
 
 [node name="CombatGui" type="CanvasLayer"]
 script = ExtResource("1_atmfw")
@@ -60,3 +61,6 @@ offset_right = 226.0
 offset_bottom = 887.0
 rotation = 1.57989
 value = 100.0
+
+[node name="DiffInputHandler" parent="." instance=ExtResource("5_uh8ej")]
+position = Vector2(450.565, 1330)
