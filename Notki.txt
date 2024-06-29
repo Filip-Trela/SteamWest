@@ -3,9 +3,11 @@ TODOS:
 	
 	stworzyc player postac
 	
-	ogarnac markery do postaci gdy jakies kontrolki
+	ogarnac markery do postaci gdy jakies kontrolki DONE
 	
 	ogarnac karte ruchu
+	
+	ogarnac limit dla move marker bazujac na karcie
 	
 	ogarnac inventory(wszystkie karty w ekwipunku, karty na rece,
 	karty odrzucone)

@@ -1,19 +1,24 @@
 extends Node2D
 
+@onready var card_sel = get_parent().get_parent().get_node("CardSelected")
+
 
 
 var area_input
 var button_input
 
 var dir
-var norm_dir
+var norm_dir= Vector2(0,0)
 var length
 
 var dragging = false
 
 var max_len = 200
 
-@onready var card_sel = get_parent().get_parent().get_node("CardSelected")
+var marker
+
+var marker_speed = 0.02
+
 
 func _process(delta):
 	#print(area_input)
@@ -21,6 +26,13 @@ func _process(delta):
 		card_sel["process_mode"] = Node.PROCESS_MODE_DISABLED
 	else:
 		card_sel["process_mode"] = Node.PROCESS_MODE_INHERIT
+
+func _physics_process(delta):
+	if norm_dir:
+		marker.global_position += norm_dir * length * marker_speed
+	else:
+		marker.global_position += Vector2(0,0)
+		
 
 func _input(event):
 	if event is InputEventScreenDrag:
@@ -52,6 +64,8 @@ func _input(event):
 			#TODO to change later, it more of rotat
 	elif event is InputEventScreenTouch:
 		if dragging and not event.pressed:
+			norm_dir = Vector2(0,0)
+			length = 0
 			dragging = false
 			$Joy.global_position = self.global_position
 			

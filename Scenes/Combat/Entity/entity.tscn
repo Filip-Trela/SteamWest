@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b178kvn38osr3"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Entity/entity.gd" id="1_08f0x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cdu2m"]
+radius = 30.0
+height = 100.0
+
+[node name="Entity" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_08f0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cdu2m")

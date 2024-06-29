@@ -56,6 +56,11 @@ func card_selected(high_card):
 
 func activate():
 	if has_card:
+		var marker_group = get_parent().get_parent().get_node("CombatWorld/Markers")
+		for marker in marker_group.get_children():
+			marker.queue_free()
+		
+		
 		handler.visible = true
 		handler["process_mode"] = Node.PROCESS_MODE_INHERIT
 		$CardPosition.get_child(0).queue_free()

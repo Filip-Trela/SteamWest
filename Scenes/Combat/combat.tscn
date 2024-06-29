@@ -1,14 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://v43u3xp8anoe"]
 
-[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_6dptq"]
 [ext_resource type="PackedScene" uid="uid://c7fy2cagoid2m" path="res://Scenes/Combat/Gui/combat_gui.tscn" id="2_bj03l"]
+[ext_resource type="PackedScene" uid="uid://bpquygqsy8als" path="res://Scenes/Combat/World/combat_world.tscn" id="2_qwh7y"]
 
 [node name="Combat" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.301105, 0.56451, 0.385807, 1)
-position = Vector2(377.5, 838)
-scale = Vector2(12.7969, 27.1875)
-texture = ExtResource("1_6dptq")
-
 [node name="CombatGui" parent="." instance=ExtResource("2_bj03l")]
+
+[node name="CombatWorld" parent="." instance=ExtResource("2_qwh7y")]

@@ -39,7 +39,7 @@ func _ready():
 	cards_set = JSON.parse_string(cards)
 
 
-	card_set_start(15)
+	card_set_start(8)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -4,6 +4,8 @@ var area_input
 var pressed
 var dragging
 
+var marker
+
 func _input(event):
 	if event is InputEventScreenTouch:
 		if area_input:

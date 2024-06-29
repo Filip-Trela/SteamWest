@@ -1,19 +1,22 @@
 extends Node2D
 
+@onready var card_sel = get_parent().get_parent().get_node("CardSelected")
+
 
 
 var area_input
 
 var dir
-var norm_dir
-var length
+var norm_dir = Vector2(0,0)
+var length = 0
 
 var dragging = false
 
 var max_len = 200
 
+var marker
 
-@onready var card_sel = get_parent().get_parent().get_node("CardSelected")
+
 
 func _process(delta):
 	if dragging:
@@ -21,6 +24,8 @@ func _process(delta):
 	else:
 		card_sel["process_mode"] = Node.PROCESS_MODE_INHERIT
 		
+	marker.rotation = -norm_dir.angle_to(Vector2(0, -1))
+	marker.scale = Vector2(1, length / max_len)
 
 func _input(event):
 	if event is InputEventScreenDrag:
@@ -55,6 +60,7 @@ func _input(event):
 			if length <50:
 				$Joy.global_position = self.global_position
 			else:
+				$Joy.global_position = self.global_position
 				pass #some function that works
 	
 	area_input = false
