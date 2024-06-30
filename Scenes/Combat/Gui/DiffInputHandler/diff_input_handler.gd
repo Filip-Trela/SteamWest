@@ -2,6 +2,7 @@ extends Node2D
 
 var player:CharacterBody2D
 var combat_world:Node2D
+var card_selector:Node2D
 
 
 
@@ -17,7 +18,11 @@ func _ready():
 	hide_joys()
 	player = get_parent().get_parent().get_node("CombatWorld/PlayerGroup/Player")
 	combat_world = get_parent().get_parent().get_node("CombatWorld")
+	card_selector = get_parent().get_parent().get_node("CombatGui/CardSelected")
 	
+	$RotateJoy.player = player
+	$MoveJoy.player = player
+	$NullJoy.player = player
 	
 
 
@@ -25,15 +30,18 @@ func _process(delta):
 	pass
 
 
-func start(type):
+func start(text_set):
 	for child in combat_world.get_node("Markers").get_children():
 		child.queue_free()
+	
+	var type = text_set[3]
 	
 	match type:
 		"rotate": 
 			$RotateJoy.visible = true
 			$RotateJoy["process_mode"] = Node.PROCESS_MODE_INHERIT
 			
+			$RotateJoy.card = card_selector.get_node("CardPosition").get_child(0)
 			
 			marker = rot_marker.instantiate()
 			marker.global_position = player.global_position
@@ -47,6 +55,8 @@ func start(type):
 			$MoveJoy.visible = true
 			$MoveJoy["process_mode"] = Node.PROCESS_MODE_INHERIT
 			
+			$MoveJoy.card = card_selector.get_node("CardPosition").get_child(0)
+			
 			marker = move_marker.instantiate()
 			marker.global_position = player.global_position
 			$MoveJoy.marker = marker
@@ -57,6 +67,8 @@ func start(type):
 		"null":
 			$NullJoy.visible = true
 			$NullJoy["process_mode"] = Node.PROCESS_MODE_INHERIT
+			
+			$NullJoy.card = card_selector.get_node("CardPosition").get_child(0)
 			
 			marker = null_marker.instantiate()
 			marker.global_position = player.global_position

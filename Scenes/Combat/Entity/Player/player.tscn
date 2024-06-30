@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfl7dibmn1i1l"]
 
 [ext_resource type="PackedScene" uid="uid://b178kvn38osr3" path="res://Scenes/Combat/Entity/entity.tscn" id="1_3ayo5"]
-[ext_resource type="Script" path="res://Player.gd" id="2_geya0"]
+[ext_resource type="Script" path="res://Scenes/Combat/Entity/Player/Player.gd" id="2_ev0nk"]
 [ext_resource type="Texture2D" uid="uid://derekvt4gdni3" path="res://icon.svg" id="3_e35qi"]
 
 [node name="Player" instance=ExtResource("1_3ayo5")]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("2_geya0")
+script = ExtResource("2_ev0nk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 position = Vector2(0, -42)

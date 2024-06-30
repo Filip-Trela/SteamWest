@@ -1,26 +1,22 @@
 {
 	
-	"basic card":
+	"Fast Legs":
 		{
-			"description": "Just a basic card with rotating attack",
-			"amount": "4",
-			"type":"rotate"
-		}
-	,
-	
-	"second card":
-		{
-			"description": "Just a basic card with move attack",
+			"title": "Fast Legs",
+			"description": "Bascially running^2",
 			"amount": "1",
-			"type":"move"
-		}
-	,
-	
-	"third card":
+			"type": "rotate",
+			"player_toss": "500",
+			"effect": "null"
+		},
+		
+	"QuickDraw":
 		{
-			"description": "Just a basic card with null attack",
-			"amount": "41",
-			"type":"null"
+			"title": "Quick Draw",
+			"description": "Fast shoot",
+			"amount": "1",
+			"type": "rotate",
+			"player_toss": "-100",
+			"effect": "null"
 		}
-	
 }

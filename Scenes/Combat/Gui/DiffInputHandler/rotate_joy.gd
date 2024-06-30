@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var card_sel = get_parent().get_parent().get_node("CardSelected")
-
+@onready var card_handler = get_parent().get_parent().get_node("CardHandler")
 
 
 var area_input
@@ -15,6 +15,10 @@ var dragging = false
 var max_len = 200
 
 var marker
+var player
+
+
+var card
 
 
 
@@ -61,9 +65,23 @@ func _input(event):
 				$Joy.global_position = self.global_position
 			else:
 				$Joy.global_position = self.global_position
-				pass #some function that works
+				activate()
 	
 	area_input = false
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	area_input = true
+
+
+func activate():
+	get_parent().hide_joys()
+	card.rotate_card(player, norm_dir, length/200)
+	
+	
+	card_sel.activate()
+	card_handler.remove_high_card()
+	
+	
+	
+	
+	

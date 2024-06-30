@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var card_sel = get_parent().get_parent().get_node("CardSelected")
-
+@onready var card_handler = get_parent().get_parent().get_node("CardHandler")
 
 
 var area_input
@@ -16,8 +16,14 @@ var dragging = false
 var max_len = 200
 
 var marker
+var player
 
 var marker_speed = 0.02
+
+
+
+var card
+
 
 
 func _process(delta):
@@ -71,11 +77,10 @@ func _input(event):
 			
 		elif not dragging:
 			if button_input and not event.pressed:
-				pass
+				activate()
 	
 	area_input = false
 	button_input = false
-
 
 
 
@@ -85,3 +90,15 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 func _on_button_area_input_event(viewport, event, shape_idx):
 	button_input = true
+	
+	
+	
+func activate():
+	get_parent().hide_joys()
+	card.move_card(player)
+	
+	card_sel.activate()
+	card_handler.remove_high_card()
+	
+	
+	

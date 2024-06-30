@@ -39,11 +39,12 @@ func _ready():
 	cards_set = JSON.parse_string(cards)
 
 
-	card_set_start(8)
+	card_set_start(5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	card_set_update()
+
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -72,7 +73,7 @@ func _input(event):
 
 
 func card_set_start(nr):
-	angle_diff = deg_to_rad( 360/nr)
+	angle_diff = deg_to_rad( 360/ nr)
 	
 	for number in range(nr):
 		#TODO choosing random card for now
@@ -106,6 +107,8 @@ func card_set_start(nr):
 	
 	
 func card_set_update():
+	angle_diff = deg_to_rad( 360/ $Cards.get_child_count())
+	
 	for nr in len($Cards.get_children()):
 		var card = $Cards.get_child(nr)
 		card.position = card_pos.rotated(angle_diff * nr + drag_x)
@@ -134,7 +137,12 @@ func _on_timer_timeout():
 
 func activate():
 	selector.card_selected(high_card)
-	diff_input.start(high_card.text_set[2])
+	diff_input.start(high_card.text_set)
 	
 	visible = false
 	self["process_mode"] = Node.PROCESS_MODE_DISABLED
+
+
+func remove_high_card():
+	high_card.queue_free()
+	high_card = null

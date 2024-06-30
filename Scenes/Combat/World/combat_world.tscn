@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpquygqsy8als"]
+[gd_scene load_steps=3 format=3 uid="uid://bpquygqsy8als"]
 
 [ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_hawm4"]
 [ext_resource type="PackedScene" uid="uid://dfl7dibmn1i1l" path="res://Scenes/Combat/Entity/Player/player.tscn" id="2_fvce4"]
-[ext_resource type="PackedScene" uid="uid://c076khwwp3gad" path="res://Scenes/Combat/Markers/move_marker.tscn" id="4_8b6oe"]
-[ext_resource type="PackedScene" uid="uid://c3ckoehxix1hy" path="res://Scenes/Combat/Markers/null_marker.tscn" id="5_bvb35"]
 
 [node name="CombatWorld" type="Node2D"]
 
@@ -19,7 +17,3 @@ texture = ExtResource("1_hawm4")
 position = Vector2(246, 633)
 
 [node name="Markers" type="Node2D" parent="."]
-
-[node name="MoveMarker" parent="Markers" instance=ExtResource("4_8b6oe")]
-
-[node name="NullMarker" parent="Markers" instance=ExtResource("5_bvb35")]

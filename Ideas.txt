@@ -1,0 +1,5 @@
+Karty ktore graja z soba, niczym daj 5 tarczy a pozniej karta zaatakuje za tyle
+ile masz tarcz
+
+dodatkowo przedmioty niczym w slice and dice, ktore zmieniaja staty i inne rzeczy
+zachowuje tarcze np

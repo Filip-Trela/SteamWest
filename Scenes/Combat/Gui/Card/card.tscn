@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bae0jt2yq8228"]
+[gd_scene load_steps=6 format=3 uid="uid://bae0jt2yq8228"]
 
 [ext_resource type="Script" path="res://Scenes/Combat/Gui/Card/card.gd" id="1_7eow0"]
 [ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_8h788"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_4xrq2"]
+font_size = 28
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_x244p"]
-font_size = 22
+font_size = 19
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bn608"]
@@ -30,16 +35,26 @@ position = Vector2(0, -345.002)
 scale = Vector2(3.8, 3)
 texture = ExtResource("1_8h788")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
+offset_left = -126.0
+offset_top = -248.0
+offset_right = 126.0
+offset_bottom = -188.0
+text = "cncghjfjh"
+label_settings = SubResource("LabelSettings_4xrq2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="."]
 offset_left = -115.0
-offset_top = -246.0
+offset_top = -195.0
 offset_right = 118.0
 offset_bottom = -13.0
 text = "Just a label for checking if readable. Maybe is maybe isn't"
 label_settings = SubResource("LabelSettings_x244p")
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="."]
+[node name="Amount" type="Label" parent="."]
 offset_left = 73.0
 offset_top = -288.0
 offset_right = 119.0

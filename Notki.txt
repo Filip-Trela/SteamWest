@@ -5,6 +5,8 @@ TODOS:
 	
 	ogarnac markery do postaci gdy jakies kontrolki DONE
 	
+	chyba ten czas na input wrzucic do autoload i wtedy zmniejszyc
+	
 	ogarnac karte ruchu
 	
 	ogarnac limit dla move marker bazujac na karcie
