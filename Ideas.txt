@@ -3,3 +3,25 @@ ile masz tarcz
 
 dodatkowo przedmioty niczym w slice and dice, ktore zmieniaja staty i inne rzeczy
 zachowuje tarcze np
+
+moze strzaly po jakim czasie tez koliduja z small obstacles??
+
+
+
+PLANY (ma byc bardzo ogolne, checkpointy bardziej):
+	-kilka stage'ow
+	-miedzy stage'ami szansa na zakup itemow badz kart
+	-enemy ai
+	-skonczyc main loop
+	-przejscia miedzy turami
+	-na poczatku wyswietla wybor kilku dodatkowych lepszych kart np tier 1
+	-zapis i wczytywanie
+	-ustawienia
+
+
+PLANY ALE BARDZO DALEKIE, PO DEMO:
+	- port na pc
+	- kilka postaci
+	- mozliwosc modowania
+	- kilka trybow gry
+	- dlc czy cos

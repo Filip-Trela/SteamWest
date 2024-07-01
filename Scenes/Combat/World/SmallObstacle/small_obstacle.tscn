@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc2yw5xom2dks"]
+
+[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_g4uxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va7qc"]
+size = Vector2(64, 64)
+
+[node name="SmallObstacle" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g4uxx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_va7qc")

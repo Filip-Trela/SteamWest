@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpquygqsy8als"]
+[gd_scene load_steps=13 format=3 uid="uid://bpquygqsy8als"]
 
 [ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_hawm4"]
 [ext_resource type="PackedScene" uid="uid://djbyr5m432o4q" path="res://Scenes/Combat/director.tscn" id="1_um7cq"]
 [ext_resource type="PackedScene" uid="uid://dfl7dibmn1i1l" path="res://Scenes/Combat/Entity/Player/player.tscn" id="2_fvce4"]
 [ext_resource type="PackedScene" uid="uid://cavkeukl0nfeo" path="res://Scenes/Combat/World/Camera/combat_camera.tscn" id="3_y6e61"]
+[ext_resource type="PackedScene" uid="uid://cc2yw5xom2dks" path="res://Scenes/Combat/World/SmallObstacle/small_obstacle.tscn" id="4_op7qu"]
 [ext_resource type="PackedScene" uid="uid://bklg0a6gpm15y" path="res://Scenes/Combat/Entity/Enemies/enemy.tscn" id="4_vl30d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d7n6t"]
@@ -48,6 +49,9 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 65538, 0, 0, 655
 
 [node name="Y_sort" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="SmallObstacle" parent="Y_sort" instance=ExtResource("4_op7qu")]
+position = Vector2(360, 785)
 
 [node name="Player" parent="Y_sort" instance=ExtResource("2_fvce4")]
 position = Vector2(246, 633)

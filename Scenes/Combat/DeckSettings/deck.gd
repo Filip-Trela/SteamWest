@@ -19,8 +19,7 @@ var max_on_hand = 4
 
 
 func _process(delta):
-	print("on hand: " + str(len(on_hand_move)) )
-	print("draw smove: " + str(len(draw_move)) )
+	pass
 
 
 
@@ -81,8 +80,6 @@ func next_turn():
 			
 			
 			
-			
-	
 	
 	#checks if move on hand, if true then nothing
 	if on_hand_move:

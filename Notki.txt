@@ -1,46 +1,80 @@
 TODOS:
+	bardziej zaawansowane dzialanie skilli na entity
+	troche niech przypomina z endless train gdzie:
+		[health, armor, poison etc]
+	
+	do tego, co ture, entity ma funkcje ktora dla efektow(itemow czy z kart)
+	cos robi
+	
+	efekty na postaci zapewne jako node z skryptem i wrzucane w to z karty cos
+	podobnie pewnie itemy
+	
+	dla strzalow i innych skilli nalezy poprawic visual part pozycje,
+	powinna byc wyzej, bedzie sie pierdzielic z y sort
+	
+	turns, jakis indykator czy cos
+	
+	cos na pewno z inputem poprawic bo cos nie pasuje notdone
+	
+	ogarnac limit dla move marker bazujac na karcie
+	
+	typy atakow:
+		strzal GIT
+		uderzenie
+		null tylko instancjuje
+		move tylko instancjuje
+		
+	trzy typy blokow:
+		kolizja z entity i strzalami
+		kolizja z entity
+		inne(interaktywne, beczki etc)
+	
+	tiery kart
+	
+	swiat bedzie trzeba zapewne dodawac wlasnorecznie
+	
+	markery sort -1 aby byly pod postaciami i innymi rzeczami
+	
+	##enemy ai:
+		-bazujac na kartach wybiera opcje dla siebie
+		-gdy przytrzymasz na nim input, wyswietla karte ktora chce uzyc
+		tez tworzy markery ale inaczej
+		-gdy ginie nie znika, dopiero przy zmianie stage'a
+	
+	
+	
+DONE AND TO REMEBER:
+	wiekszosc shuffling cards jest w deck, director. card uzywa used card z deck
+	
+	
+
+
+
+JUST DONE, MORE LIKE DEVLOG:
 	skonczyc kontrolki DONE
 	
 	stworzyc player postac DONE
 	
 	ogarnac markery do postaci gdy jakies kontrolki DONE
 	
-	chyba ten czas na input wrzucic do autoload i wtedy zmniejszyc DONE
-	cos na pewno z inputem poprawic bo cos nie pasuje notdone
-	
+	chyba ten czas na input wrzucic do autoload i wtedy zmniejszyc NIE TO
+
 	ogarnac karte ruchu DONE~~
 	
-	ogarnac limit dla move marker bazujac na karcie
-	
 	ogarnac inventory(wszystkie karty w ekwipunku, karty na rece,
-	karty odrzucone)
-	
-	tiery kart
+	karty odrzucone) DONE~~
 	
 	ogarnac interakcje playera z kontrolkami i karta
 	(player cos robi; karta zostaje usunieta z zestawu tymczasowego;) DONE~~
 	
-	player moe uzywac rot oraz move atak, tak samo jak null DONE
+	player moze uzywac rot oraz move atak, tak samo jak null DONE
 	
 	ogarnac swiat, enviroment po ktorym postac sie porusza
-	(sciany)
+	(sciany) DONE
 	
-	trzy typy blokow:
-		kolizja z entity i strzalami
-		kolizja z entity
-		inne(interaktywne, beczki etc)
-		
-	basic enemy, dzialajacy ale bez inteligencji
+	basic enemy, dzialajacy ale bez inteligencji DONE
 	
+	enemy moga byc w grupie (inspektor) DONE
 	
-	typy atakow:
-		strzal GIT
-		uderzenie
-		null GIT
-		move GIT
-
-	enemy moga byc w grupie (inspektor)
+	smaller character DONE
 	
-	smaller character
-	
-	swiat bedzie trzeba zapewne dodawac wlasnorecznie
