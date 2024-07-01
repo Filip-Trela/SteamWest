@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var card_sel = get_parent().get_parent().get_node("CardSelected")
 @onready var card_handler = get_parent().get_parent().get_node("CardHandler")
-
+@onready var comb_world = get_parent().get_parent().get_parent().get_node("CombatWorld")
+@onready var deck = get_parent().get_parent().get_parent().get_node("Deck")
 
 var area_input
 
@@ -30,6 +31,7 @@ func _process(delta):
 		
 	marker.rotation = -norm_dir.angle_to(Vector2(0, -1))
 	marker.scale = Vector2(1, length / max_len)
+
 
 func _input(event):
 	if event is InputEventScreenDrag:
@@ -75,7 +77,8 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 func activate():
 	get_parent().hide_joys()
-	card.rotate_card(player, norm_dir, length/200)
+	card.deck = deck
+	card.rotate_card(player, comb_world, norm_dir, length/200)
 	
 	
 	card_sel.activate()

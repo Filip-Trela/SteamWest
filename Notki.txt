@@ -1,23 +1,26 @@
 TODOS:
 	skonczyc kontrolki DONE
 	
-	stworzyc player postac
+	stworzyc player postac DONE
 	
 	ogarnac markery do postaci gdy jakies kontrolki DONE
 	
-	chyba ten czas na input wrzucic do autoload i wtedy zmniejszyc
+	chyba ten czas na input wrzucic do autoload i wtedy zmniejszyc DONE
+	cos na pewno z inputem poprawic bo cos nie pasuje notdone
 	
-	ogarnac karte ruchu
+	ogarnac karte ruchu DONE~~
 	
 	ogarnac limit dla move marker bazujac na karcie
 	
 	ogarnac inventory(wszystkie karty w ekwipunku, karty na rece,
 	karty odrzucone)
 	
-	ogarnac interakcje playera z kontrolkami i karta
-	(player cos robi; karta zostaje usunieta z zestawu tymczasowego;)
+	tiery kart
 	
-	player moe uzywac rot oraz move atak, tak samo jak null
+	ogarnac interakcje playera z kontrolkami i karta
+	(player cos robi; karta zostaje usunieta z zestawu tymczasowego;) DONE~~
+	
+	player moe uzywac rot oraz move atak, tak samo jak null DONE
 	
 	ogarnac swiat, enviroment po ktorym postac sie porusza
 	(sciany)
@@ -28,3 +31,16 @@ TODOS:
 		inne(interaktywne, beczki etc)
 		
 	basic enemy, dzialajacy ale bez inteligencji
+	
+	
+	typy atakow:
+		strzal GIT
+		uderzenie
+		null GIT
+		move GIT
+
+	enemy moga byc w grupie (inspektor)
+	
+	smaller character
+	
+	swiat bedzie trzeba zapewne dodawac wlasnorecznie

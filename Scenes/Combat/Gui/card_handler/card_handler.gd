@@ -23,7 +23,7 @@ var dragging = false
 
 @onready var selector = get_parent().get_node("CardSelected")
 @onready var diff_input = get_parent().get_node("DiffInputHandler")
-
+@onready var deck = get_parent().get_parent().get_node("Deck")
 
 
 
@@ -37,9 +37,10 @@ var cards_set:Dictionary
 func _ready():
 	cards = FileAccess.get_file_as_string(cards_file)
 	cards_set = JSON.parse_string(cards)
-
-
-	card_set_start(5)
+	
+	deck.start()
+	card_set_start()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -50,7 +51,7 @@ func _input(event):
 	if event is InputEventScreenTouch:
 		if area_input:
 			if event.pressed and not dragging and not pressed:
-				$Timer.start(0.1)
+				$Timer.start(Settings.drag_timer)
 				pressed = true
 				
 			elif not event.pressed:
@@ -72,37 +73,30 @@ func _input(event):
 
 
 
-func card_set_start(nr):
-	angle_diff = deg_to_rad( 360/ nr)
-	
-	for number in range(nr):
-		#TODO choosing random card for now
-		var choosen_card = cards_set.keys().pick_random()
-		var card = card_pl.instantiate()
+func card_set_start():
+	for number in range(deck.max_on_hand):
+		var choosen_card
+		var card
+		
+		if number ==0:
+			choosen_card = deck.on_hand_move[0]
+		else:
+			choosen_card = deck.on_hand_skill[number-1]
+		
+		card = card_pl.instantiate()
 		
 		
 		#setting information about card
-		card.text_set = cards_set[choosen_card].values()
+		card.text_set = choosen_card
 		
 		
 		#setting position
 		card.rotation = deg_to_rad(180)
-		card.position = card_pos.rotated(angle_diff * number)
+		#card.position = card_pos.rotated(angle_diff * number)
 		card.position.x = card.position.x * card_xy.x
 		card.position.y = card.position.y * card_xy.y
 		
 		$Cards.add_child(card)
-	
-	for card in $Cards.get_children():
-		card["modulate"] = (Color8(177,177,177,255))
-		if high_card:
-			if high_card.position.y < card.position.y:
-				high_card = card
-		else:
-			high_card = card
-			
-	high_card["modulate"] = (Color8(255,255,255,255))
-	high_card.position.y = high_y
 	
 	
 	
@@ -127,6 +121,16 @@ func card_set_update():
 
 	high_card.position.y = high_y
 
+
+func next_turn():
+	for card in $Cards.get_children():
+		card.queue_free()
+		
+	card_set_start()
+	
+	high_card = null
+	
+	
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	area_input = true

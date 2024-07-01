@@ -1,0 +1,15 @@
+{
+		"Fast Legs":
+		{
+			"title": "Fast Legs",
+			"description": "Bascially running^2",
+			"type": "rotate",
+			"player_toss": "500",
+			"skill": "null",
+			"skill_speed": "0",
+			"amount": "0",
+			"spread": "0",
+			"enemy_toss": "100",
+			"damage": "0"
+		},
+}

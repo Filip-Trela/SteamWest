@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_oip2v"]
 
-[node name="RotateMarker" type="Node2D"]
+[node name="RotateMarker" type="Node2D" groups=["Markers"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.360784, 0.733333, 1, 0.243137)

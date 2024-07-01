@@ -16,8 +16,8 @@ var marker
 
 func _ready():
 	hide_joys()
-	player = get_parent().get_parent().get_node("CombatWorld/PlayerGroup/Player")
-	combat_world = get_parent().get_parent().get_node("CombatWorld")
+	player = get_parent().get_parent().get_node("CombatWorld/Y_sort/Player")
+	combat_world = get_parent().get_parent().get_node("CombatWorld/Y_sort")
 	card_selector = get_parent().get_parent().get_node("CombatGui/CardSelected")
 	
 	$RotateJoy.player = player
@@ -31,10 +31,12 @@ func _process(delta):
 
 
 func start(text_set):
-	for child in combat_world.get_node("Markers").get_children():
-		child.queue_free()
+	#for child in combat_world.get_node("Markers").get_children():
+	#	child.queue_free()
+	for marker in get_tree().get_nodes_in_group("Markers"):
+		marker.queue_free()
 	
-	var type = text_set[3]
+	var type = text_set[2]
 	
 	match type:
 		"rotate": 
@@ -48,7 +50,7 @@ func start(text_set):
 			$RotateJoy.marker = marker
 			marker.scale = Vector2(1,0)
 			
-			combat_world.get_node("Markers").add_child(marker)
+			combat_world.add_child(marker)
 			marker = null
 			
 		"move": 
@@ -61,7 +63,7 @@ func start(text_set):
 			marker.global_position = player.global_position
 			$MoveJoy.marker = marker
 			
-			combat_world.get_node("Markers").add_child(marker)
+			combat_world.add_child(marker)
 			marker = null
 			
 		"null":
@@ -74,7 +76,7 @@ func start(text_set):
 			marker.global_position = player.global_position
 			$NullJoy.marker = marker
 			
-			combat_world.get_node("Markers").add_child(marker)
+			combat_world.add_child(marker)
 			marker = null
 
 

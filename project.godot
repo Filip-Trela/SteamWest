@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Settings="*res://Autoloads/settings.gd"
-PlayerInfo="*res://Autoloads/player_info.gd"
 
 [display]
 

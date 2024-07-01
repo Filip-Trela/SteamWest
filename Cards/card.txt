@@ -1,22 +1,58 @@
 {
-	
-	"Fast Legs":
-		{
-			"title": "Fast Legs",
-			"description": "Bascially running^2",
-			"amount": "1",
-			"type": "rotate",
-			"player_toss": "500",
-			"effect": "null"
-		},
 		
 	"QuickDraw":
 		{
 			"title": "Quick Draw",
 			"description": "Fast shoot",
-			"amount": "1",
 			"type": "rotate",
-			"player_toss": "-100",
-			"effect": "null"
+			"player_toss": "0",
+			"skill": "res://Scenes/Combat/Skills/Rotate/Testing/quick_draw.tscn",
+			"skill_speed": "700",
+			"amount": "1",
+			"spread": "0",
+			"enemy_toss": "200",
+			"damage": "5"
+			
+		},
+		
+	"MultiShoot":
+		{
+			"title": "multiShoot",
+			"description": "Few bullets",
+			"type": "rotate",
+			"player_toss": "-250",
+			"skill": "res://Scenes/Combat/Skills/Rotate/Testing/quick_draw.tscn",
+			"skill_speed": "900",
+			"amount": "3",
+			"spread": "10",
+			"enemy_toss": "200",
+			"damage": "5"
+		},
+	"move skill":
+		{
+			"title": "Move skill",
+			"description": "AoE",
+			"type": "move",
+			"player_toss": "-250",
+			"skill": "res://Scenes/Combat/Skills/Move/move_skill.tscn",
+			"skill_speed": "900",
+			"amount": "3",
+			"spread": "10",
+			"enemy_toss": "100",
+			"damage": "0"
+		},
+		
+	"null skill":
+		{
+			"title": "Null skill",
+			"description": "AoE",
+			"type": "null",
+			"player_toss": "-250",
+			"skill": "res://Scenes/Combat/Skills/Move/move_skill.tscn",
+			"skill_speed": "900",
+			"amount": "3",
+			"spread": "10",
+			"enemy_toss": "100",
+			"damage": "0"
 		}
 }

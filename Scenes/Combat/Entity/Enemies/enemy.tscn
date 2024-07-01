@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bklg0a6gpm15y"]
+
+[ext_resource type="PackedScene" uid="uid://b178kvn38osr3" path="res://Scenes/Combat/Entity/entity.tscn" id="1_y3fgy"]
+[ext_resource type="Script" path="res://Scenes/Combat/Entity/Enemies/enemy.gd" id="2_4iy0f"]
+[ext_resource type="Texture2D" uid="uid://derekvt4gdni3" path="res://icon.svg" id="2_ourma"]
+
+[node name="Enemy" instance=ExtResource("1_y3fgy")]
+script = ExtResource("2_4iy0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+self_modulate = Color(0.855382, 0, 0.0706692, 1)
+position = Vector2(0, -27.5)
+scale = Vector2(0.505, 0.648438)
+texture = ExtResource("2_ourma")

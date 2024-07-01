@@ -2,8 +2,11 @@ extends Node2D
 
 @onready var card_sel = get_parent().get_parent().get_node("CardSelected")
 @onready var card_handler = get_parent().get_parent().get_node("CardHandler")
+@onready var comb_world = get_parent().get_parent().get_parent().get_node("CombatWorld")
+@onready var deck = get_parent().get_parent().get_parent().get_node("Deck")
 
 var area_input
+
 var pressed
 var dragging
 
@@ -32,7 +35,9 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 func activate():
 	get_parent().hide_joys()
-	card.null_card(player)
+	card.deck = deck
+	card.null_card(player, comb_world)
+	
 	
 	card_sel.activate()
 	card_handler.remove_high_card()

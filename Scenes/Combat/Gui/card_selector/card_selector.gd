@@ -21,7 +21,7 @@ func _input(event):
 	if event is InputEventScreenTouch:
 		if area_input:
 			if event.pressed and not dragging and not pressed:
-				$Timer.start(0.1)
+				$Timer.start(Settings.drag_timer)
 				pressed = true
 				
 				
@@ -49,8 +49,7 @@ func card_selected(high_card):
 
 func activate():
 	if has_card:
-		var marker_group = get_parent().get_parent().get_node("CombatWorld/Markers")
-		for marker in marker_group.get_children():
+		for marker in get_tree().get_nodes_in_group("Markers"):
 			marker.queue_free()
 		
 		

@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://v43u3xp8anoe"]
+[gd_scene load_steps=4 format=3 uid="uid://v43u3xp8anoe"]
 
 [ext_resource type="PackedScene" uid="uid://c7fy2cagoid2m" path="res://Scenes/Combat/Gui/combat_gui.tscn" id="2_bj03l"]
 [ext_resource type="PackedScene" uid="uid://bpquygqsy8als" path="res://Scenes/Combat/World/combat_world.tscn" id="2_qwh7y"]
+[ext_resource type="PackedScene" uid="uid://g5cal7k0qu2f" path="res://Scenes/Combat/DeckSettings/deck.tscn" id="3_m7cl0"]
 
 [node name="Combat" type="Node2D"]
 
 [node name="CombatGui" parent="." instance=ExtResource("2_bj03l")]
 
 [node name="CombatWorld" parent="." instance=ExtResource("2_qwh7y")]
+
+[node name="Deck" parent="." instance=ExtResource("3_m7cl0")]
