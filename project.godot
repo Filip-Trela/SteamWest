@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Steam West"
-run/main_scene="res://Scenes/game.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+run/main_scene="res://Scenes/Combat/combat.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://Assets/whiteCircle.png"
 
 [autoload]
 
@@ -26,6 +26,11 @@ window/size/viewport_height=1600
 window/size/window_width_override=360
 window/size/window_height_override=800
 window/stretch/mode="viewport"
+window/handheld/orientation=1
+
+[global_group]
+
+Timer=""
 
 [input_devices]
 
@@ -42,4 +47,6 @@ pointing/emulate_mouse_from_touch=false
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

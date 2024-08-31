@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://o0nmqkcvg2xe"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Gui/TurnIndicator/turn_indicator.gd" id="1_0di8q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7qtff"]
+font_size = 48
+
+[node name="TurnIndicator" type="Label"]
+offset_right = 719.0
+offset_bottom = 82.0
+text = "Turn 1"
+label_settings = SubResource("LabelSettings_7qtff")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_0di8q")

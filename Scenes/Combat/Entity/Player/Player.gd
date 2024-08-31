@@ -1,5 +1,5 @@
 extends Entity
 
 
-func _ready():
+func custom_ready():
 	$HurtBox["collision_layer"] = 4

@@ -20,8 +20,7 @@ var max_len = 200
 var marker
 var player
 
-var marker_speed = 0.02
-
+var range = 0
 
 
 var card
@@ -29,7 +28,6 @@ var card
 
 
 func _process(delta):
-	#print(area_input)
 	if dragging:
 		card_sel["process_mode"] = Node.PROCESS_MODE_DISABLED
 	else:
@@ -37,10 +35,15 @@ func _process(delta):
 
 func _physics_process(delta):
 	if norm_dir:
-		marker.global_position += norm_dir * length * marker_speed
+		marker.velocity = norm_dir * length
 	else:
-		marker.global_position += Vector2(0,0)
+		marker.velocity =Vector2(0,0)
 		
+	#keeping in range
+	if marker.global_position.distance_to(player.global_position) > range:
+		var angle = marker.global_position - player.global_position
+		angle = angle.normalized()
+		marker.global_position = player.global_position + angle * range
 
 func _input(event):
 	if event is InputEventScreenDrag:

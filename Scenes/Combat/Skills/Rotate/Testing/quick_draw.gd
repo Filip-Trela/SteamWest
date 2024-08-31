@@ -7,8 +7,16 @@ var speed = 700
 var toss
 var damage
 
+var timer
+
+func _ready() -> void:
+	timer = get_tree().get_nodes_in_group("Timer")[0]
+
 func _physics_process(delta):
-	velocity = mov_vec * speed
+	if timer.paused:
+		velocity = Vector2(0,0)
+	else:
+		velocity = mov_vec * speed
 	
 	move_and_slide()
 
@@ -23,4 +31,5 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 
 #for walls etc
 func _on_area_2d_body_entered(body):
-	queue_free()
+	if body["collision_layer"] == 2:
+		queue_free()

@@ -31,15 +31,15 @@ func _process(delta):
 
 
 func start(text_set):
-	#for child in combat_world.get_node("Markers").get_children():
-	#	child.queue_free()
 	for marker in get_tree().get_nodes_in_group("Markers"):
 		marker.queue_free()
 	
 	var type = text_set[2]
-	
+
+
 	match type:
 		"rotate": 
+			
 			$RotateJoy.visible = true
 			$RotateJoy["process_mode"] = Node.PROCESS_MODE_INHERIT
 			
@@ -47,8 +47,9 @@ func start(text_set):
 			
 			marker = rot_marker.instantiate()
 			marker.global_position = player.global_position
-			$RotateJoy.marker = marker
 			marker.scale = Vector2(1,0)
+			$RotateJoy.marker = marker
+			
 			
 			combat_world.add_child(marker)
 			marker = null
@@ -58,6 +59,7 @@ func start(text_set):
 			$MoveJoy["process_mode"] = Node.PROCESS_MODE_INHERIT
 			
 			$MoveJoy.card = card_selector.get_node("CardPosition").get_child(0)
+			$MoveJoy.range = int(text_set[10])
 			
 			marker = move_marker.instantiate()
 			marker.global_position = player.global_position

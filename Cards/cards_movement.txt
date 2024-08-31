@@ -10,6 +10,7 @@
 			"amount": "0",
 			"spread": "0",
 			"enemy_toss": "100",
-			"damage": "0"
+			"damage": "0",
+			"recovery_time": "0.4"
 		},
 }

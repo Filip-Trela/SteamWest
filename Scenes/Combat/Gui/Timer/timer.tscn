@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1xc05kth15ia"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Gui/Timer/timer.gd" id="1_cbdbi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ljf3y"]
+font_size = 48
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Label" groups=["Timer"]]
+offset_right = 719.0
+offset_bottom = 85.0
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_ljf3y")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_cbdbi")
+
+[node name="Timer" type="Timer" parent="."]

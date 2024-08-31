@@ -22,7 +22,6 @@ var player
 var card
 
 
-
 func _process(delta):
 	if dragging:
 		card_sel["process_mode"] = Node.PROCESS_MODE_DISABLED
@@ -65,6 +64,7 @@ func _input(event):
 			dragging = false
 			if length <50:
 				$Joy.global_position = self.global_position
+				length = 0
 			else:
 				$Joy.global_position = self.global_position
 				activate()
@@ -79,6 +79,7 @@ func activate():
 	get_parent().hide_joys()
 	card.deck = deck
 	card.rotate_card(player, comb_world, norm_dir, length/200)
+	length = 0
 	
 	
 	card_sel.activate()

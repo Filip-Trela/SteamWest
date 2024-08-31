@@ -1,5 +1,8 @@
 TODOS:
-	bardziej zaawansowane dzialanie skilli na entity
+	zmienic w menu button na taki co dziala mobilnie, aktualny nie dziala,
+	wzorowac sie na handlerach etc
+	
+	bardziej zaawansowane dzialenie skilli na entity
 	troche niech przypomina z endless train gdzie:
 		[health, armor, poison etc]
 	
@@ -12,11 +15,7 @@ TODOS:
 	dla strzalow i innych skilli nalezy poprawic visual part pozycje,
 	powinna byc wyzej, bedzie sie pierdzielic z y sort
 	
-	turns, jakis indykator czy cos
-	
 	cos na pewno z inputem poprawic bo cos nie pasuje notdone
-	
-	ogarnac limit dla move marker bazujac na karcie
 	
 	typy atakow:
 		strzal GIT
@@ -49,32 +48,9 @@ DONE AND TO REMEBER:
 	
 
 
-
-JUST DONE, MORE LIKE DEVLOG:
-	skonczyc kontrolki DONE
-	
-	stworzyc player postac DONE
-	
-	ogarnac markery do postaci gdy jakies kontrolki DONE
-	
-	chyba ten czas na input wrzucic do autoload i wtedy zmniejszyc NIE TO
-
-	ogarnac karte ruchu DONE~~
-	
-	ogarnac inventory(wszystkie karty w ekwipunku, karty na rece,
-	karty odrzucone) DONE~~
-	
-	ogarnac interakcje playera z kontrolkami i karta
-	(player cos robi; karta zostaje usunieta z zestawu tymczasowego;) DONE~~
-	
-	player moze uzywac rot oraz move atak, tak samo jak null DONE
-	
-	ogarnac swiat, enviroment po ktorym postac sie porusza
-	(sciany) DONE
-	
-	basic enemy, dzialajacy ale bez inteligencji DONE
-	
-	enemy moga byc w grupie (inspektor) DONE
-	
-	smaller character DONE
-	
+Important:
+	groups:
+		Entity
+		Director
+		Markers
+		Timer

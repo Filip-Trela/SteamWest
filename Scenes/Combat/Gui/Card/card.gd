@@ -21,14 +21,20 @@ var spread
 var group
 var enemy_toss
 var damage
+var recovery_time
 
 
 
 #for director
 var activated = false
 
+var timer
+
 
 func _ready():
+	timer = get_tree().get_nodes_in_group("Timer")[0]
+	
+	
 	title = text_set[0]
 	description = text_set[1]
 	type = text_set[2] 
@@ -39,6 +45,7 @@ func _ready():
 	spread = deg_to_rad(int(text_set[7]))
 	enemy_toss = int(text_set[8])
 	damage = int(text_set[9])
+	recovery_time = float(text_set[10])
 	
 	
 	
@@ -55,7 +62,12 @@ func rotate_card(player, combat_world, direction, len_strength):
 	player = player
 	combat_world = combat_world
 	
-	player.mov_vec += direction * len_strength * player_toss
+	if player_toss > 0:
+		player.dir = direction
+		player.speed += len_strength * player_toss
+	elif player_toss < 0:
+		player.dir = Vector2(-direction.x, -direction.y)
+		player.speed += len_strength * abs(player_toss)
 	
 	if skill != "null":
 		var effect = load(skill)
@@ -76,7 +88,9 @@ func rotate_card(player, combat_world, direction, len_strength):
 			combat_world.add_child(effect_instance)
 			
 		#director next state
-	get_tree().get_nodes_in_group("Director")[0].during_action = true
+	
+	#get_tree().get_nodes_in_group("Director")[0].during_action = true
+	timer.start(recovery_time)
 
 func move_card(player, combat_world, marker):
 	deck.card_used(text_set)
@@ -107,6 +121,3 @@ func null_card(player, combat_world):
 	
 	
 	get_tree().get_nodes_in_group("Director")[0].during_action = true
-
-
-

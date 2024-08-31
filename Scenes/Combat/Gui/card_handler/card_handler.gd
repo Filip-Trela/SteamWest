@@ -62,8 +62,8 @@ func _input(event):
 				$Timer.stop()
 		
 	elif event is InputEventScreenDrag:
-		if dragging:
-			if area_input:
+		if area_input:
+			if dragging:
 				drag_x += event.relative.x * drag_sens
 			
 	
@@ -74,7 +74,7 @@ func _input(event):
 
 
 func card_set_start():
-	for number in range(deck.max_on_hand):
+	for number in range(4):
 		var choosen_card
 		var card
 		

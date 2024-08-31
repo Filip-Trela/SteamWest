@@ -16,7 +16,6 @@ var has_card = false
 
 
 
-
 func _input(event):
 	if event is InputEventScreenTouch:
 		if area_input:

@@ -1,14 +1,21 @@
-extends Control
+extends Label
+
+var turn = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	text = "Turn " + str(turn)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func _input(event):
-	if event is InputEventScreenTouch:
-		pass#print(event)
+
+func next_turn():
+	turn += 1
+	text = "Turn " + str(turn)
+	
+	
+	
+	
