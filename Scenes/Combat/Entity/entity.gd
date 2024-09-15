@@ -30,6 +30,12 @@ func _process(delta: float) -> void:
 		deceleration = deceleration_coll
 	else:
 		deceleration = deceleration_normal
+		
+	custom_process()
+
+func custom_process(): 
+	pass
+
 
 func _physics_process(delta):
 	if timer.paused:
@@ -55,7 +61,10 @@ func _physics_process(delta):
 	
 	
 	move_and_slide()
-
+	
+	
+	
+	
 func take_damage(damage):
 	health -= damage
 	if health <= 0:

@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var card_sel = get_parent().get_parent().get_node("CardSelected")
-@onready var card_handler = get_parent().get_parent().get_node("CardHandler")
-@onready var comb_world = get_parent().get_parent().get_parent().get_node("CombatWorld")
-@onready var deck = get_parent().get_parent().get_parent().get_node("Deck")
+var card_sel
+var card_handler
+var comb_world
+var deck
 
 var area_input
 
@@ -25,7 +25,17 @@ var range = 0
 
 var card
 
+var input_size
 
+func _ready() -> void:
+	custom_ready()
+
+func custom_ready():
+	card_sel = get_parent().get_parent().get_node("CardSelected")
+	card_handler = get_parent().get_parent().get_node("CardHandler")
+	comb_world = get_parent().get_parent().get_parent().get_node("CombatWorld/NavigationRegion2D/Y_sort")
+	deck = get_parent().get_parent().get_parent().get_node("Deck")
+	input_size = Vector2($TouchArea.size.x/2, $TouchArea.size.y/2)
 
 func _process(delta):
 	if dragging:
@@ -60,7 +70,7 @@ func _input(event):
 			dragging = true
 			
 		elif dragging:
-			$Joy.global_position = event.position
+			$Joy.global_position = event.position - input_size
 			dir = $Joy.global_position - self.global_position
 			norm_dir = dir.normalized()
 			length = ($Joy.global_position - self.global_position).length()
@@ -86,15 +96,6 @@ func _input(event):
 	
 	area_input = false
 	button_input = false
-
-
-
-func _on_area_2d_input_event(viewport, event, shape_idx):
-	area_input = true
-
-
-func _on_button_area_input_event(viewport, event, shape_idx):
-	button_input = true
 	
 	
 	
@@ -109,3 +110,11 @@ func activate():
 	
 	
 	
+
+
+func _on_button_area_gui_input(event: InputEvent) -> void:
+	button_input = true
+
+
+func _on_touch_area_gui_input(event: InputEvent) -> void:
+	area_input = true

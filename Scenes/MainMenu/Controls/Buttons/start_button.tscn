@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bliu45440bs17"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu/Controls/Buttons/start_button.gd" id="1_5rm4j"]
+[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="2_acd6h"]
+
+[sub_resource type="FontFile" id="FontFile_t2mln"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ercdu"]
+font = SubResource("FontFile_t2mln")
+font_size = 48
+
+[node name="StartButton" type="Node2D"]
+script = ExtResource("1_5rm4j")
+
+[node name="TouchArea" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 274.0
+offset_bottom = 121.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.593134, 0.593134, 0.593134, 1)
+position = Vector2(137.5, 61)
+scale = Vector2(4.26563, 1.90625)
+texture = ExtResource("2_acd6h")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 275.0
+offset_bottom = 122.0
+text = "Start"
+label_settings = SubResource("LabelSettings_ercdu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="TouchArea" to="." method="_on_touch_area_gui_input"]

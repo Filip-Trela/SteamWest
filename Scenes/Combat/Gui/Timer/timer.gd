@@ -20,11 +20,18 @@ var target_time:float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	custom_ready()
+
+func custom_ready():
 	director = get_tree().get_nodes_in_group("Director")
 	director = director[0]
 	
 	timer.start(time_set)
 	timer.paused = true
+	paused = true
+	
+	for effect in get_tree().get_nodes_in_group("Effect"):
+		effect["process_mode"] = Node.PROCESS_MODE_DISABLED
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,11 +44,10 @@ func _process(delta: float) -> void:
 			director.next_turn()
 			timer.paused = true
 			paused = true
-	#match director.state:
-		#'action':
-		#	timer.paused = false
-		#_:
-		#	timer.paused = true
+			for effect in get_tree().get_nodes_in_group("Effect"):
+				effect["process_mode"] = Node.PROCESS_MODE_DISABLED
+			for skill in get_tree().get_nodes_in_group("Skill"):
+				skill["process_mode"] = Node.PROCESS_MODE_DISABLED
 	
 	set_label()
 
@@ -52,6 +58,10 @@ func start(recovery_time):
 	director.during_action()
 	
 	target_time = time + recovery_time
+	for effect in get_tree().get_nodes_in_group("Effect"):
+		effect["process_mode"] = Node.PROCESS_MODE_INHERIT
+	for skill in get_tree().get_nodes_in_group("Skill"):
+		skill["process_mode"] = Node.PROCESS_MODE_INHERIT
 
 func set_label():
 	minutes = int(time)/60

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Steam West"
-run/main_scene="res://Scenes/Combat/combat.tscn"
+run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://Assets/whiteCircle.png"
 
@@ -31,6 +31,16 @@ window/handheld/orientation=1
 [global_group]
 
 Timer=""
+Effect=""
+Enemy=""
+Skill=""
+Entity=""
+Shadow=""
+AnimatedSprite=""
+Sprite=""
+Director=""
+CombatWorld=""
+Player=""
 
 [input_devices]
 
@@ -40,10 +50,13 @@ pointing/emulate_mouse_from_touch=false
 [layer_names]
 
 2d_physics/layer_1="Menu"
+2d_navigation/layer_1="floor"
 2d_physics/layer_2="World"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Enemy"
 2d_physics/layer_5="SmallObstacles"
+2d_physics/layer_6="Skill"
+avoidance/layer_1="floor"
 
 [rendering]
 

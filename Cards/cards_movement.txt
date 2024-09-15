@@ -11,6 +11,9 @@
 			"spread": "0",
 			"enemy_toss": "100",
 			"damage": "0",
-			"recovery_time": "0.4"
+			"recovery_time": "0.1",
+			"effect": "res://Scenes/Combat/Effects/QuickStep/quick_step.tscn",
+			"effect_angle": "180",
+			"effect_keep_on_player": "true"
 		},
 }

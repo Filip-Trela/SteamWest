@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1p48ika0gp34"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Markers/Shadow/shadow.gd" id="1_y15eg"]
+[ext_resource type="Texture2D" uid="uid://derekvt4gdni3" path="res://icon.svg" id="3_3lf34"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cdu2m"]
+radius = 20.0
+height = 70.0
+
+[node name="Shadow" type="CharacterBody2D" groups=["Shadow"]]
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("1_y15eg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.307125, 0.625101, 1, 0.282353)
+position = Vector2(0, -27)
+scale = Vector2(0.554, 0.687484)
+texture = ExtResource("3_3lf34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cdu2m")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 500.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpavepxddxgho"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/World/InteractableObstacle/Pillar/pillar.gd" id="1_crss5"]
+[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_nwpc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trrk3"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjeb8"]
+size = Vector2(50, 50)
+
+[node name="Pillar" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_crss5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.55763, 0.426899, 0.282149, 1)
+position = Vector2(-2.38419e-07, -82.5)
+scale = Vector2(0.78125, 3.35938)
+texture = ExtResource("1_nwpc5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.434746, 0.766033, 0.362986, 1)
+position = Vector2(1, -217)
+scale = Vector2(1.98371, 2.06228)
+texture = ExtResource("1_nwpc5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_trrk3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xjeb8")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

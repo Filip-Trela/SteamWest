@@ -1,4 +1,29 @@
 TODOS:
+	ogarnac move DONE oraz null skille
+	
+	poswiata playera DONE
+	
+	po zakonczeniu stage'a cos sie dzieje ~~
+	
+	status efekty, dawane do entity,ktore gdy instancjonowane zmieniaja parametry,
+	maja timer, po uplywie czasu wraca entity do normalnosci i status jest usuwany
+	
+	trzymajac input na enemy mozna wyswietlic karte, pokazuje ona zdrowie, tarcze efekty
+	i miniaturke ~~
+	
+	postacie, enviroment, efekty i wszystko in world jest zbudowane z kilku
+	bialych sprite'ow, ktore beda mialy pozniej zmieniane visibility RGB,
+	aby byla rozna kolorystyka dla wszystkiego ~~DONE
+	
+	custom klasy dla sprite i animated sprite, aby mialy grupy gdzie mozna wybrac
+	ktory typ z palety barw ma wybrac. dodac je do grup
+	dodatkowo pod director dac colorDirector.
+	jest to wszystko rozlozone, brakuje tylko assetow, match w color director DONE
+	
+	
+	
+	
+	
 	zmienic w menu button na taki co dziala mobilnie, aktualny nie dziala,
 	wzorowac sie na handlerach etc
 	
@@ -39,18 +64,24 @@ TODOS:
 		-gdy przytrzymasz na nim input, wyswietla karte ktora chce uzyc
 		tez tworzy markery ale inaczej
 		-gdy ginie nie znika, dopiero przy zmianie stage'a
+
+
+ogarnac matematycznie: ile czasu i w jakiej predkosci aby przebyl dana odleglosc
+
+ENEMY AI:
+	na poczatku ogarnac moze tilemap, jak one dzialaja etc
+	jak umieszczac obiekty + nawigacje w tym
 	
+	wiedza gdzie jest player caly czas
+	skille maja area2d danger area, z ktorych enemy probuja wyjsc
+	ten podstawowy enemy bedzie dumb enemy
+	stworzyc enemy ktory tylko idzie do playera
+	stworzyc enemy ktory atakuje melee
+	stworzyc enemy ktory strzela
+
+
+
 	
 	
 DONE AND TO REMEBER:
 	wiekszosc shuffling cards jest w deck, director. card uzywa used card z deck
-	
-	
-
-
-Important:
-	groups:
-		Entity
-		Director
-		Markers
-		Timer

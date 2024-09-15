@@ -10,3 +10,6 @@ modulate = Color(0.360784, 0.733333, 1, 0.243137)
 position = Vector2(0, -100)
 scale = Vector2(0.705, 4.125)
 texture = ExtResource("1_oip2v")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -230)

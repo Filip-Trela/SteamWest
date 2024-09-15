@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c3ufe2tw26fsg" path="res://Scenes/Combat/Gui/card_handler/card_handler.tscn" id="3_72wjv"]
 [ext_resource type="PackedScene" uid="uid://bql1g3w1pjxv7" path="res://Scenes/Combat/Gui/card_selector/card_selector.tscn" id="4_gx4c8"]
 [ext_resource type="PackedScene" uid="uid://cjbbh70tqcixo" path="res://Scenes/Combat/Gui/DiffInputHandler/diff_input_handler.tscn" id="5_uh8ej"]
-[ext_resource type="PackedScene" uid="uid://o0nmqkcvg2xe" path="res://Scenes/Combat/Gui/TurnIndicator/turn_indicator.tscn" id="6_wgn0c"]
 [ext_resource type="PackedScene" uid="uid://b1xc05kth15ia" path="res://Scenes/Combat/Gui/Timer/timer.tscn" id="7_bcqj3"]
+[ext_resource type="PackedScene" uid="uid://sjw1nm1wq6e0" path="res://Scenes/Combat/Gui/SkipButton/skip_button.tscn" id="7_mll78"]
 
 [node name="CombatGui" type="CanvasLayer"]
 script = ExtResource("1_atmfw")
@@ -67,9 +67,9 @@ value = 100.0
 [node name="DiffInputHandler" parent="." instance=ExtResource("5_uh8ej")]
 position = Vector2(450.565, 1330)
 
-[node name="TurnIndicator" parent="." instance=ExtResource("6_wgn0c")]
-visible = false
-offset_right = 716.0
-offset_bottom = 107.0
-
 [node name="Timer" parent="." instance=ExtResource("7_bcqj3")]
+offset_top = 60.0
+offset_bottom = 145.0
+
+[node name="SkipButton" parent="." instance=ExtResource("7_mll78")]
+position = Vector2(427, 921)

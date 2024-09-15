@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2a61f1ave2gq"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Directors/stage_director.gd" id="1_eu8lf"]
+
+[node name="StageDirector" type="Node"]
+script = ExtResource("1_eu8lf")

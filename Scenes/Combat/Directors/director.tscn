@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://djbyr5m432o4q"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Directors/director.gd" id="1_3c25g"]
+[ext_resource type="PackedScene" uid="uid://dea6chvc0phi0" path="res://Scenes/Combat/Directors/color_director.tscn" id="2_4u5p8"]
+[ext_resource type="PackedScene" uid="uid://c2a61f1ave2gq" path="res://Scenes/Combat/Directors/stage_director.tscn" id="3_gw5pw"]
+
+[node name="Director" type="Node" groups=["Director"]]
+script = ExtResource("1_3c25g")
+
+[node name="ColorDirector" parent="." instance=ExtResource("2_4u5p8")]
+
+[node name="StageDirector" parent="." groups=["Director"] instance=ExtResource("3_gw5pw")]

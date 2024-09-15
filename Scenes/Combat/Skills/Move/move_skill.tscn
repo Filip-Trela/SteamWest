@@ -1,24 +1,148 @@
-[gd_scene load_steps=4 format=3 uid="uid://dswhod87m6l05"]
+[gd_scene load_steps=9 format=3 uid="uid://dswhod87m6l05"]
 
 [ext_resource type="Script" path="res://Scenes/Combat/Skills/Move/move_skill.gd" id="1_v3mt1"]
-[ext_resource type="Texture2D" uid="uid://yaa5hx73fa83" path="res://Assets/whiteCircle.png" id="2_eqwfa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bx415"]
-radius = 30.0
+radius = 60.0
 
-[node name="MoveSkill" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_88sam"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CPUParticles2D:one_shot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5tg5a"]
+resource_name = "start"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CPUParticles2D:one_shot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_78udg"]
+_data = {
+"RESET": SubResource("Animation_88sam"),
+"start": SubResource("Animation_5tg5a")
+}
+
+[sub_resource type="Curve" id="Curve_8thph"]
+min_value = -1.0
+_data = [Vector2(0, -0.010989), 0.0, 0.0, 0, 0, Vector2(0.143564, 0.582418), 0.0, 0.0, 0, 0, Vector2(0.663366, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.450549), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_bx4t5"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.30198, 17.5824), 0.0, 0.0, 0, 0, Vector2(0.539604, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_pxgyn"]
+offsets = PackedFloat32Array(0.488506, 1)
+colors = PackedColorArray(0.877928, 0, 0.284156, 1, 0.705882, 0.352941, 0.501961, 0)
+
+[node name="MoveSkill" type="CharacterBody2D" groups=["Skill"]]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_v3mt1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_eqwfa")
-
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 32
+collision_mask = 8
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_bx415")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_78udg")
+}
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 24
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+orbit_velocity_min = 0.8
+orbit_velocity_max = 0.8
+orbit_velocity_curve = SubResource("Curve_8thph")
+damping_min = 39.64
+damping_max = 100.0
+damping_curve = SubResource("Curve_bx4t5")
+scale_amount_min = 8.0
+scale_amount_max = 15.0
+color_ramp = SubResource("Gradient_pxgyn")
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

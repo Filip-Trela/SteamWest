@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbfvxr8nb2iw6"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu/Controls/main_menu_controls.gd" id="1_7y5bq"]
-[ext_resource type="PackedScene" uid="uid://r353qv4e3uoq" path="res://Scenes/MainMenu/Controls/Buttons/start.tscn" id="2_vrbbw"]
+[ext_resource type="PackedScene" uid="uid://bliu45440bs17" path="res://Scenes/MainMenu/Controls/Buttons/start_button.tscn" id="3_rkbnm"]
 
 [node name="MainMenuControls" type="Control"]
 layout_mode = 3
@@ -10,9 +10,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_7y5bq")
 
-[node name="Start" parent="." instance=ExtResource("2_vrbbw")]
-layout_mode = 0
-offset_left = 364.0
-offset_top = 1243.0
-offset_right = 679.0
-offset_bottom = 1345.0
+[node name="StartButton" parent="." instance=ExtResource("3_rkbnm")]
+position = Vector2(387, 1224)

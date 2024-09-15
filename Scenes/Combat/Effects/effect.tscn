@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjpmxk2wc86cw"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Effects/effect.gd" id="1_0vg0f"]
+
+[sub_resource type="Curve" id="Curve_qj5sy"]
+max_value = 20.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.212644, 10.989), -87.4097, -87.4097, 0, 0, Vector2(0.218391, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ieqxq"]
+max_value = 20.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.109195, 4.61539), 0.0, 0.0, 0, 0, Vector2(0.758621, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_s3gxi"]
+colors = PackedColorArray(0.897656, 0.732595, 3.85046e-07, 1, 1, 1, 1, 1)
+
+[node name="Effect" type="CPUParticles2D" groups=["Effect"]]
+amount = 12
+lifetime = 0.5
+explosiveness = 1.0
+lifetime_randomness = 0.37
+fixed_fps = 30
+draw_order = 1
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(0.707, 0.707)
+linear_accel_min = 300.0
+linear_accel_max = 300.0
+linear_accel_curve = SubResource("Curve_qj5sy")
+radial_accel_max = 0.299998
+radial_accel_curve = SubResource("Curve_ieqxq")
+damping_max = 0.1
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 8.0
+scale_amount_max = 16.0
+color_ramp = SubResource("Gradient_s3gxi")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+script = ExtResource("1_0vg0f")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

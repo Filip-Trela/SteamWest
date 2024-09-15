@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dea6chvc0phi0"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Directors/color_director.gd" id="1_k6ufx"]
+
+[node name="ColorDirector" type="Node"]
+script = ExtResource("1_k6ufx")

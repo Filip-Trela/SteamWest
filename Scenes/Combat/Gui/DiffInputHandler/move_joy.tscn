@@ -1,19 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuoo06hlpsfru"]
+[gd_scene load_steps=5 format=3 uid="uid://cuoo06hlpsfru"]
 
 [ext_resource type="Script" path="res://Scenes/Combat/Gui/DiffInputHandler/move_joy.gd" id="1_yt4fi"]
 [ext_resource type="Texture2D" uid="uid://yaa5hx73fa83" path="res://Assets/whiteCircle.png" id="2_7ev27"]
 [ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="3_3y1l4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3ccjj"]
-radius = 230.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_ogrng"]
 font_size = 50
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdn6t"]
-size = Vector2(150, 500)
 
 [node name="MoveJoy" type="Node2D"]
 script = ExtResource("1_yt4fi")
@@ -26,11 +20,6 @@ texture = ExtResource("2_7ev27")
 [node name="Joy" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_7ev27")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_3ccjj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.621165, 0.439886, 0.916823, 1)
@@ -48,11 +37,19 @@ label_settings = SubResource("LabelSettings_ogrng")
 horizontal_alignment = 1
 autowrap_mode = 1
 
-[node name="ButtonArea" type="Area2D" parent="."]
-position = Vector2(-375, -70)
+[node name="TouchArea" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -222.0
+offset_top = -226.0
+offset_right = 230.0
+offset_bottom = 221.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonArea"]
-shape = SubResource("RectangleShape2D_kdn6t")
+[node name="ButtonArea" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -451.0
+offset_top = -324.0
+offset_right = -297.0
+offset_bottom = 182.0
 
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="input_event" from="ButtonArea" to="." method="_on_button_area_input_event"]
+[connection signal="gui_input" from="TouchArea" to="." method="_on_touch_area_gui_input"]
+[connection signal="gui_input" from="ButtonArea" to="." method="_on_button_area_gui_input"]

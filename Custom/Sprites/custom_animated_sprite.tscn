@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://u7ahs6i4ekhe"]
+
+[ext_resource type="Script" path="res://Custom/Sprites/custom_animated_sprite.gd" id="1_04jc8"]
+
+[node name="CustomAnimatedSprite" type="AnimatedSprite2D" groups=["AnimatedSprite"]]
+script = ExtResource("1_04jc8")

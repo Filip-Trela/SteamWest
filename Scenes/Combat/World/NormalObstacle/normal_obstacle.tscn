@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_wyjxr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjdem"]
-size = Vector2(64, 65)
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1twc"]
+radius = 34.55
 
 [node name="NormalObstacle" type="StaticBody2D"]
 collision_layer = 2
@@ -14,4 +14,9 @@ texture = ExtResource("1_wyjxr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_gjdem")
+shape = SubResource("CircleShape2D_f1twc")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+vertices = PackedVector2Array(-57, -46, -57, 52, 57, 53, 56, -50)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

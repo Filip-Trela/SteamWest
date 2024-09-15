@@ -12,7 +12,12 @@
 			"spread": "0",
 			"enemy_toss": "200",
 			"damage": "5",
-			"recovery_time": "0.3"
+			"recovery_time": "0.3",
+			"effect": "res://Scenes/Combat/Effects/effect.tscn",
+			"effect_angle": "0",
+			"effect_keep_on_player": "false",
+			"enviroment destroy": "true",
+			"range": "0"
 			
 		},
 		
@@ -28,7 +33,13 @@
 			"spread": "10",
 			"enemy_toss": "200",
 			"damage": "5",
-			"recovery_time": "0.3"
+			"recovery_time": "0.3",
+			"effect": "res://Scenes/Combat/Effects/effect.tscn",
+			"effect_angle": "0",
+			"effect_keep_on_player": "false",
+			"enviroment destroy": "false",
+			"range": "0"
+			
 		},
 	"move skill":
 		{
@@ -38,12 +49,16 @@
 			"player_toss": "0",
 			"skill": "res://Scenes/Combat/Skills/Move/move_skill.tscn",
 			"skill_speed": "900",
-			"amount": "3",
-			"spread": "10",
+			"amount": "1",
+			"spread": "0",
 			"enemy_toss": "100",
-			"damage": "0",
-			"range": "400",
-			"recovery_time": "0.3"
+			"damage": "50",
+			"recovery_time": "0.7",
+			"effect": "None",
+			"effect_angle": "0",
+			"effect_keep_on_player": "false",
+			"enviroment destroy": "false",
+			"range": "400"
 		},
 		
 	"null skill":
@@ -57,7 +72,12 @@
 			"amount": "3",
 			"spread": "10",
 			"enemy_toss": "100",
-			"damage": "0",
-			"recovery_time": "0.3"
+			"damage": "5",
+			"recovery_time": "0.3",
+			"effect": "None",
+			"effect_angle": "0",
+			"effect_keep_on_player": "false",
+			"enviroment destroy": "false",
+			"range": "400"
 		}
 }

@@ -15,15 +15,13 @@ var high_card
 var drag_x = 0.0
 var drag_sens = 0.007
 
-var area_input = false
-
 
 var pressed= false
 var dragging = false
 
-@onready var selector = get_parent().get_node("CardSelected")
-@onready var diff_input = get_parent().get_node("DiffInputHandler")
-@onready var deck = get_parent().get_parent().get_node("Deck")
+var selector
+var diff_input
+var deck
 
 
 
@@ -33,44 +31,26 @@ var cards
 var cards_set:Dictionary
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	custom_ready()
+
+func custom_ready():
+	selector = get_parent().get_node("CardSelected")
+	diff_input = get_parent().get_node("DiffInputHandler")
+	deck = get_parent().get_parent().get_node("Deck")
+	
+	
 	cards = FileAccess.get_file_as_string(cards_file)
 	cards_set = JSON.parse_string(cards)
 	
 	deck.start()
 	card_set_start()
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	card_set_update()
-
-
-func _input(event):
-	if event is InputEventScreenTouch:
-		if area_input:
-			if event.pressed and not dragging and not pressed:
-				$Timer.start(Settings.drag_timer)
-				pressed = true
-				
-			elif not event.pressed:
-				if dragging == false:
-					activate()
-				pressed = false
-				dragging = false
-				$Timer.stop()
-		
-	elif event is InputEventScreenDrag:
-		if area_input:
-			if dragging:
-				drag_x += event.relative.x * drag_sens
-			
-	
-
-			
-	area_input = false
-
 
 
 func card_set_start():
@@ -105,7 +85,7 @@ func card_set_update():
 	
 	for nr in len($Cards.get_children()):
 		var card = $Cards.get_child(nr)
-		card.position = card_pos.rotated(angle_diff * nr + drag_x)
+		card.position = card_pos.rotated(angle_diff * nr + drag_x + PI/2)
 		card.position.x = card.position.x * card_xy.x
 		card.position.y = card.position.y * card_xy.y
 		
@@ -127,13 +107,10 @@ func next_turn():
 		card.queue_free()
 		
 	card_set_start()
+	drag_x = 0
 	
 	high_card = null
 	
-	
-
-func _on_area_2d_input_event(viewport, event, shape_idx):
-	area_input = true
 
 func _on_timer_timeout():
 	dragging = true
@@ -150,3 +127,24 @@ func activate():
 func remove_high_card():
 	high_card.queue_free()
 	high_card = null
+
+
+func _on_color_rect_gui_input(event: InputEvent) -> void:
+	if event is InputEventScreenDrag:
+		if dragging:
+			drag_x += event.relative.x * drag_sens
+			
+	elif event is InputEventScreenTouch:
+		if event.pressed and not dragging and not pressed:
+			$Timer.start(Settings.drag_timer)
+			pressed = true
+				
+		elif not event.pressed:
+			if dragging == false:
+				activate()
+			pressed = false
+			dragging = false
+			$Timer.stop()
+	
+	
+	

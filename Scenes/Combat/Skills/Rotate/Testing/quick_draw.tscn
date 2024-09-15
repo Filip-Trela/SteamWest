@@ -17,13 +17,13 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_skqsl")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-modulate = Color(1, 0.808732, 0.728711, 1)
+modulate = Color(0.993838, 0.402157, 5.62167e-05, 1)
 position = Vector2(0, -23)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_skqsl")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 32
 collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

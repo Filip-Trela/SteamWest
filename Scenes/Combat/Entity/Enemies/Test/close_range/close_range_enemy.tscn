@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddbe0jrwbu5ca"]
+
+[ext_resource type="PackedScene" uid="uid://bklg0a6gpm15y" path="res://Scenes/Combat/Entity/Enemies/enemy.tscn" id="1_cmthc"]
+[ext_resource type="Script" path="res://Scenes/Combat/Entity/Enemies/Test/close_range/close_range_enemy.gd" id="2_j1ahc"]
+
+[node name="CloseRangeEnemy" instance=ExtResource("1_cmthc")]
+script = ExtResource("2_j1ahc")
