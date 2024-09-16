@@ -27,6 +27,8 @@ var card
 
 var input_size
 
+var text_set
+
 func _ready() -> void:
 	custom_ready()
 
@@ -102,7 +104,8 @@ func _input(event):
 func activate():
 	get_parent().hide_joys()
 	card.deck = deck
-	card.move_card(player, comb_world, marker)
+	deck.card_used(text_set)
+	card.move_card(player, marker)
 	
 	
 	card_sel.activate()

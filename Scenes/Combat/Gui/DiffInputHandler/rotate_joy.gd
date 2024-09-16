@@ -77,7 +77,8 @@ func _process(delta):
 func activate():
 	get_parent().hide_joys()
 	card.deck = deck
-	card.rotate_card(player, comb_world, norm_dir, length/max_len)
+	deck.card_used(text_set)
+	card.rotate_card(player, norm_dir, length/max_len)
 	length = 0
 	
 	

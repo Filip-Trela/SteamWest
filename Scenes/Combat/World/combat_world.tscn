@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpquygqsy8als"]
+[gd_scene load_steps=12 format=3 uid="uid://bpquygqsy8als"]
 
 [ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="1_hawm4"]
 [ext_resource type="PackedScene" uid="uid://dfl7dibmn1i1l" path="res://Scenes/Combat/Entity/Player/player.tscn" id="2_fvce4"]
 [ext_resource type="PackedScene" uid="uid://cavkeukl0nfeo" path="res://Scenes/Combat/World/Camera/combat_camera.tscn" id="3_y6e61"]
 [ext_resource type="PackedScene" uid="uid://ddbe0jrwbu5ca" path="res://Scenes/Combat/Entity/Enemies/Test/close_range/close_range_enemy.tscn" id="5_w53cw"]
+[ext_resource type="PackedScene" uid="uid://cpavepxddxgho" path="res://Scenes/Combat/World/InteractableObstacle/Pillar/pillar.tscn" id="6_a3445"]
 [ext_resource type="PackedScene" uid="uid://c7lv3o46p08vh" path="res://Scenes/Combat/World/NormalObstacle/normal_obstacle.tscn" id="7_ivflo"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kyrho"]
-vertices = PackedVector2Array(23, 1556.39, 23, 1549, 650.992, 1549, 694, 635.375, 620, 638, 425, 628, 424, 525, 544, 676, 544, 774, 541, 753, 540, 650, 23, 1481, 167, 952, 310, 859, 424, 860, 694, 1481, 658, 775, 203, 819, 310, 761, 166, 849, 89, 818, 53, 853, 423, 757, 427, 752, 694, 14, 225, 431, 224, 328, 23, 14, 111, 332, 202, 716, 427, 654, 187, 704, 186, 601, 311, 627, 89, 720, 73, 703, 657.617, 736.328, 694, 736.648, 53, 951, 620, 673.305, 311, 529, 111, 430, 73, 605)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 12, 13, 14, 15), PackedInt32Array(14, 8, 16, 15), PackedInt32Array(17, 18, 13, 12, 19), PackedInt32Array(20, 17, 19, 21), PackedInt32Array(9, 8, 14, 22, 23), PackedInt32Array(24, 3, 6, 25, 26), PackedInt32Array(27, 24, 26, 28), PackedInt32Array(18, 17, 29), PackedInt32Array(30, 23, 22, 18, 29, 31, 32, 33), PackedInt32Array(31, 29, 34, 35), PackedInt32Array(16, 36, 37, 15), PackedInt32Array(38, 12, 11), PackedInt32Array(38, 11, 27, 21), PackedInt32Array(4, 39, 7, 10), PackedInt32Array(5, 4, 10, 30, 33), PackedInt32Array(25, 6, 40), PackedInt32Array(25, 40, 33, 32, 41), PackedInt32Array(41, 32, 42), PackedInt32Array(34, 20, 21, 35), PackedInt32Array(35, 21, 27, 42), PackedInt32Array(42, 27, 28, 41)])
+vertices = PackedVector2Array(23, 1556.39, 23, 1549, 650.992, 1549, 203, 819, 310, 859, 340.688, 1002.38, 323, 997.633, 167, 952, 166, 849, 694, 635.375, 620, 638, 425, 628, 424, 525, 544, 676, 544, 774, 541, 753, 540, 650, 424, 860, 658, 775, 694, 1481, 358.367, 1033, 353.641, 1015.31, 305.313, 1002.38, 423, 757, 427, 752, 292.383, 1015.31, 89, 818, 53, 853, 694, 14, 225, 431, 224, 328, 23, 14, 111, 332, 310, 761, 202, 716, 427, 654, 187, 704, 186, 601, 311, 627, 89, 720, 73, 703, 657.617, 736.328, 694, 736.648, 353.617, 1050.69, 23, 1481, 340.688, 1063.64, 323, 1068.37, 305.313, 1063.64, 620, 673.305, 311, 529, 111, 430, 73, 605, 292.383, 1050.69, 287.633, 1033, 53, 951)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 14, 18, 19, 20, 21), PackedInt32Array(7, 6, 22), PackedInt32Array(15, 14, 17, 23, 24), PackedInt32Array(7, 22, 25), PackedInt32Array(4, 17, 21, 5), PackedInt32Array(26, 3, 8, 27), PackedInt32Array(28, 9, 12, 29, 30), PackedInt32Array(31, 28, 30, 32), PackedInt32Array(33, 4, 3, 34), PackedInt32Array(35, 24, 23, 33, 34, 36, 37, 38), PackedInt32Array(36, 34, 39, 40), PackedInt32Array(18, 41, 42, 19), PackedInt32Array(43, 20, 19), PackedInt32Array(43, 19, 44, 45), PackedInt32Array(46, 45, 44), PackedInt32Array(47, 46, 44), PackedInt32Array(10, 48, 13, 16), PackedInt32Array(11, 10, 16, 35, 38), PackedInt32Array(29, 12, 49), PackedInt32Array(29, 49, 38, 37, 50), PackedInt32Array(50, 37, 51), PackedInt32Array(52, 47, 44), PackedInt32Array(7, 25, 53, 44, 54), PackedInt32Array(53, 52, 44), PackedInt32Array(54, 44, 31, 27), PackedInt32Array(39, 26, 27, 40), PackedInt32Array(40, 27, 31, 51), PackedInt32Array(51, 31, 32, 50)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-34, -34, -28, 1567, 736, 1558, 736, -25)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njxu5"]
@@ -96,7 +97,7 @@ position = Vector2(360, 1100)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_kyrho")
 
-[node name="Y_sort" type="Node2D" parent="NavigationRegion2D"]
+[node name="Y_sort" type="Node2D" parent="NavigationRegion2D" groups=["Y_Sort_World"]]
 y_sort_enabled = true
 
 [node name="Player" parent="NavigationRegion2D/Y_sort" instance=ExtResource("2_fvce4")]
@@ -151,4 +152,7 @@ position = Vector2(146, 766)
 position = Vector2(601, 722)
 
 [node name="CloseRangeEnemy" parent="NavigationRegion2D/Y_sort" instance=ExtResource("5_w53cw")]
-position = Vector2(336, 425)
+position = Vector2(525, 252)
+
+[node name="Pillar" parent="NavigationRegion2D/Y_sort" instance=ExtResource("6_a3445")]
+position = Vector2(323, 1033)

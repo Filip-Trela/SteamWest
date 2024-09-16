@@ -57,6 +57,7 @@ func start(text_set):
 			marker = null
 			
 		"move": 
+			$MoveJoy.text_set = text_set
 			$MoveJoy.visible = true
 			$MoveJoy["process_mode"] = Node.PROCESS_MODE_INHERIT
 			
@@ -71,6 +72,7 @@ func start(text_set):
 			marker = null
 			
 		"null":
+			$NullJoy.text_set = text_set
 			$NullJoy.visible = true
 			$NullJoy["process_mode"] = Node.PROCESS_MODE_INHERIT
 			

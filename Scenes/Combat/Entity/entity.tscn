@@ -4,10 +4,10 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cdu2m"]
 radius = 20.0
-height = 70.0
+height = 56.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upyft"]
-size = Vector2(60, 38)
+size = Vector2(50, 38)
 
 [node name="Entity" type="CharacterBody2D" groups=["Entity"]]
 collision_layer = 0
@@ -23,5 +23,5 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(1, -9)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_upyft")

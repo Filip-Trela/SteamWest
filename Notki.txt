@@ -1,3 +1,5 @@
+WSZYSTKO MA SKUPIAC SIE GLOWNIE NA KSZTALTACH
+
 TODOS:
 	ogarnac move DONE oraz null skille
 	

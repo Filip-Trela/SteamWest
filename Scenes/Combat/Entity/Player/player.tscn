@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfl7dibmn1i1l"]
+[gd_scene load_steps=6 format=3 uid="uid://dfl7dibmn1i1l"]
 
 [ext_resource type="PackedScene" uid="uid://b178kvn38osr3" path="res://Scenes/Combat/Entity/entity.tscn" id="1_3ayo5"]
 [ext_resource type="Script" path="res://Scenes/Combat/Entity/Player/Player.gd" id="2_ev0nk"]
-[ext_resource type="Texture2D" uid="uid://derekvt4gdni3" path="res://icon.svg" id="3_e35qi"]
+[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="4_n610a"]
+[ext_resource type="Script" path="res://Custom/Sprites/custom_sprite.gd" id="5_phu5o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cdu2m"]
 radius = 20.0
@@ -12,10 +13,48 @@ height = 70.0
 collision_layer = 4
 script = ExtResource("2_ev0nk")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
-position = Vector2(0, -26.999)
-scale = Vector2(0.554, 0.687484)
-texture = ExtResource("3_e35qi")
-
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CapsuleShape2D_cdu2m")
+
+[node name="CustomSprite" type="Sprite2D" parent="." index="2"]
+modulate = Color(0.658563, 0.410495, 0.222051, 1)
+position = Vector2(-1, 1.94736)
+scale = Vector2(0.40625, 0.467105)
+texture = ExtResource("4_n610a")
+script = ExtResource("5_phu5o")
+
+[node name="CustomSprite2" type="Sprite2D" parent="." index="3"]
+modulate = Color(0.60179, 0.671071, 0.389473, 1)
+position = Vector2(-1, -26.5)
+scale = Vector2(0.5625, 0.578125)
+texture = ExtResource("4_n610a")
+script = ExtResource("5_phu5o")
+
+[node name="CustomSprite4" type="Sprite2D" parent="." index="4"]
+modulate = Color(0.805718, 0.687204, 0.534239, 1)
+position = Vector2(-0.5, -47.75)
+scale = Vector2(0.265625, 0.351562)
+texture = ExtResource("4_n610a")
+script = ExtResource("5_phu5o")
+
+[node name="CustomSprite5" type="Sprite2D" parent="." index="5"]
+modulate = Color(0.396299, 0.326983, 0.184059, 1)
+position = Vector2(-0.5, -62.5)
+scale = Vector2(0.265625, 0.203125)
+texture = ExtResource("4_n610a")
+script = ExtResource("5_phu5o")
+
+[node name="CustomSprite6" type="Sprite2D" parent="." index="6"]
+modulate = Color(0.396299, 0.326983, 0.184059, 1)
+position = Vector2(-0.5, -58.5)
+scale = Vector2(0.484375, 0.078125)
+texture = ExtResource("4_n610a")
+script = ExtResource("5_phu5o")
+
+[node name="CustomSprite3" type="Sprite2D" parent="." index="7"]
+modulate = Color(0.681682, 0.133873, 0, 1)
+position = Vector2(-0.5, -40.5)
+rotation = 0.13947
+scale = Vector2(0.640625, 0.203125)
+texture = ExtResource("4_n610a")
+script = ExtResource("5_phu5o")

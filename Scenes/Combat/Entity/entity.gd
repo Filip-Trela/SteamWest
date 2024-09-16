@@ -21,6 +21,10 @@ func _ready() -> void:
 	deceleration = deceleration_normal
 	custom_ready()
 	
+	#TESTING
+	dir = Vector2(0,1)
+	speed = 1
+	
 func custom_ready():
 	pass
 	

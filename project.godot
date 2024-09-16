@@ -41,6 +41,7 @@ Sprite=""
 Director=""
 CombatWorld=""
 Player=""
+Y_Sort_World=""
 
 [input_devices]
 

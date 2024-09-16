@@ -1,29 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bklg0a6gpm15y"]
+[gd_scene load_steps=3 format=3 uid="uid://bklg0a6gpm15y"]
 
 [ext_resource type="PackedScene" uid="uid://b178kvn38osr3" path="res://Scenes/Combat/Entity/entity.tscn" id="1_fkn4r"]
 [ext_resource type="Script" path="res://Scenes/Combat/Entity/Enemies/enemy.gd" id="2_psiu6"]
-[ext_resource type="Texture2D" uid="uid://derekvt4gdni3" path="res://icon.svg" id="3_i3pq6"]
 
 [node name="EnemyDumb" groups=["Enemy"] instance=ExtResource("1_fkn4r")]
 collision_layer = 8
 script = ExtResource("2_psiu6")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
-self_modulate = Color(0.855382, 0, 0.0706692, 1)
-position = Vector2(0, -27.5)
-scale = Vector2(0.505, 0.648438)
-texture = ExtResource("3_i3pq6")
-
-[node name="ColorRect" type="ColorRect" parent="." index="3"]
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -33.0
 offset_top = -70.0
 offset_right = 32.0
 offset_bottom = 13.0
 
-[node name="TimerLabel" type="Timer" parent="." index="4"]
+[node name="TimerLabel" type="Timer" parent="." index="3"]
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="5"]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4"]
 simplify_path = true
 avoidance_enabled = true
 debug_enabled = true
@@ -32,11 +25,14 @@ debug_path_custom_color = Color(0.912871, 0, 0.201052, 1)
 debug_path_custom_point_size = 24.0
 debug_path_custom_line_width = 4.0
 
-[node name="RayCast2D" type="RayCast2D" parent="." index="6"]
+[node name="RayCast2D" type="RayCast2D" parent="." index="5"]
 collision_mask = 10
 
-[node name="Timer" type="Timer" parent="." index="7"]
+[node name="TimerActions" type="Timer" parent="." index="6"]
+
+[node name="Invisible" type="Node2D" parent="." index="7"]
+visible = false
 
 [connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]
 [connection signal="timeout" from="TimerLabel" to="." method="_on_timer_label_timeout"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerActions" to="." method="_on_timer_actions_timeout"]

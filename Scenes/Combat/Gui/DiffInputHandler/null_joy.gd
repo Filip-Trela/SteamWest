@@ -16,6 +16,8 @@ var player
 
 var card
 
+var text_set
+
 func _ready() -> void:
 	custom_ready()
 
@@ -28,7 +30,8 @@ func custom_ready():
 func activate():
 	get_parent().hide_joys()
 	card.deck = deck
-	card.null_card(player, comb_world)
+	deck.card_used(text_set)
+	card.null_card(player)
 	
 	
 	card_sel.activate()
