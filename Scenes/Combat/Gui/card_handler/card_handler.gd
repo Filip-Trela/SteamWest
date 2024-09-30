@@ -26,7 +26,7 @@ var deck
 
 
 #TESTS
-var cards_file = "res://Cards/card.txt"
+var cards_file = "res://Settings/card.txt"
 var cards
 var cards_set:Dictionary
 

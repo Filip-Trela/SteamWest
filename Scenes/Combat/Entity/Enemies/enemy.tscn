@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bklg0a6gpm15y"]
+[gd_scene load_steps=4 format=3 uid="uid://bklg0a6gpm15y"]
 
 [ext_resource type="PackedScene" uid="uid://b178kvn38osr3" path="res://Scenes/Combat/Entity/entity.tscn" id="1_fkn4r"]
 [ext_resource type="Script" path="res://Scenes/Combat/Entity/Enemies/enemy.gd" id="2_psiu6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e55vx"]
+radius = 27.0
+height = 68.0
 
 [node name="EnemyDumb" groups=["Enemy"] instance=ExtResource("1_fkn4r")]
 collision_layer = 8
@@ -19,7 +23,6 @@ offset_bottom = 13.0
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4"]
 simplify_path = true
 avoidance_enabled = true
-debug_enabled = true
 debug_use_custom = true
 debug_path_custom_color = Color(0.912871, 0, 0.201052, 1)
 debug_path_custom_point_size = 24.0
@@ -33,6 +36,16 @@ collision_mask = 10
 [node name="Invisible" type="Node2D" parent="." index="7"]
 visible = false
 
+[node name="DangerZone" type="Area2D" parent="." index="8"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e55vx")
+
 [connection signal="gui_input" from="ColorRect" to="." method="_on_color_rect_gui_input"]
 [connection signal="timeout" from="TimerLabel" to="." method="_on_timer_label_timeout"]
 [connection signal="timeout" from="TimerActions" to="." method="_on_timer_actions_timeout"]
+[connection signal="area_entered" from="DangerZone" to="." method="_on_danger_zone_area_entered"]
+[connection signal="area_exited" from="DangerZone" to="." method="_on_danger_zone_area_exited"]

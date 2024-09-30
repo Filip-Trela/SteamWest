@@ -17,6 +17,8 @@ var time:float = 0.0
 var paused = true
 var target_time:float
 
+var disable = true
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,14 +46,17 @@ func _process(delta: float) -> void:
 			director.next_turn()
 			timer.paused = true
 			paused = true
-			for effect in get_tree().get_nodes_in_group("Effect"):
-				effect["process_mode"] = Node.PROCESS_MODE_DISABLED
-			for skill in get_tree().get_nodes_in_group("Skill"):
-				skill["process_mode"] = Node.PROCESS_MODE_DISABLED
+			disable = true
+	if disable:
+		for effect in get_tree().get_nodes_in_group("Effect"):
+			effect["process_mode"] = Node.PROCESS_MODE_DISABLED
+		for skill in get_tree().get_nodes_in_group("Skill"):
+			skill["process_mode"] = Node.PROCESS_MODE_DISABLED
 	
 	set_label()
 
 func start(recovery_time):
+	disable = false
 	paused = false
 	timer.paused = false
 	

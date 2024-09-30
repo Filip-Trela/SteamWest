@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://civ1rlixl7n8l"]
+
+[ext_resource type="PackedScene" uid="uid://bklg0a6gpm15y" path="res://Scenes/Combat/Entity/Enemies/enemy.tscn" id="1_gtqq7"]
+[ext_resource type="Script" path="res://Scenes/Combat/Entity/Enemies/Test/mid_range/mid_range_enemy.gd" id="2_apanu"]
+[ext_resource type="Texture2D" uid="uid://nqvte2lx6s06" path="res://Assets/whiteTile.png" id="3_88sgs"]
+[ext_resource type="Script" path="res://Custom/Sprites/custom_sprite.gd" id="4_1clrn"]
+
+[node name="MidRangeEnemy" instance=ExtResource("1_gtqq7")]
+script = ExtResource("2_apanu")
+
+[node name="CustomSprite" type="Sprite2D" parent="." index="9"]
+modulate = Color(0.605756, 0.468435, 0.321481, 1)
+position = Vector2(-9.53674e-07, -5.5)
+scale = Vector2(0.53125, 0.515625)
+texture = ExtResource("3_88sgs")
+script = ExtResource("4_1clrn")
+
+[node name="CustomSprite2" type="Sprite2D" parent="." index="10"]
+modulate = Color(0.186654, 0.664398, 1, 1)
+position = Vector2(-9.53674e-07, -32)
+scale = Vector2(0.53125, 0.515625)
+texture = ExtResource("3_88sgs")
+script = ExtResource("4_1clrn")
+
+[node name="CustomSprite3" type="Sprite2D" parent="." index="11"]
+modulate = Color(0.856236, 0.769219, 0.600445, 1)
+position = Vector2(1, -56.5)
+scale = Vector2(0.34375, 0.359375)
+texture = ExtResource("3_88sgs")
+script = ExtResource("4_1clrn")
+
+[node name="CustomSprite4" type="Sprite2D" parent="." index="12"]
+modulate = Color(0.362829, 0.362829, 0.362829, 1)
+position = Vector2(-2.38419e-07, -65.875)
+scale = Vector2(0.4375, 0.246094)
+texture = ExtResource("3_88sgs")
+script = ExtResource("4_1clrn")

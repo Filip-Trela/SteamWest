@@ -17,18 +17,19 @@
 			"effect_angle": "0",
 			"effect_keep_on_player": "false",
 			"enviroment destroy": "true",
-			"range": "0"
+			"range": "0",
+			"id": "001"
 			
 		},
 		
 	"MultiShoot":
 		{
 			"title": "multiShoot",
-			"description": "Few bullets",
+			"description": "It doesn't take only one bullet",
 			"type": "rotate",
 			"player_toss": "-250",
 			"skill": "res://Scenes/Combat/Skills/Rotate/Testing/quick_draw.tscn",
-			"skill_speed": "900",
+			"skill_speed": "100",
 			"amount": "3",
 			"spread": "10",
 			"enemy_toss": "200",
@@ -38,7 +39,8 @@
 			"effect_angle": "0",
 			"effect_keep_on_player": "false",
 			"enviroment destroy": "false",
-			"range": "0"
+			"range": "0",
+			"id": "002"
 			
 		},
 	"move skill":
@@ -58,7 +60,8 @@
 			"effect_angle": "0",
 			"effect_keep_on_player": "false",
 			"enviroment destroy": "false",
-			"range": "400"
+			"range": "400",
+			"id": "003"
 		},
 		
 	"null skill":
@@ -78,6 +81,7 @@
 			"effect_angle": "0",
 			"effect_keep_on_player": "false",
 			"enviroment destroy": "false",
-			"range": "400"
+			"range": "400",
+			"id": "004"
 		}
 }

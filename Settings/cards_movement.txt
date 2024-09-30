@@ -14,6 +14,7 @@
 			"recovery_time": "0.4",
 			"effect": "res://Scenes/Combat/Effects/QuickStep/quick_step.tscn",
 			"effect_angle": "180",
-			"effect_keep_on_player": "true"
+			"effect_keep_on_player": "true",
+			"id": "005"
 		},
 }

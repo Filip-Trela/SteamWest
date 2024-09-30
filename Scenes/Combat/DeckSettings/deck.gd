@@ -26,7 +26,7 @@ func _process(delta):
 
 
 func start():
-	var cards = FileAccess.get_file_as_string("res://Cards/cards_movement.txt")
+	var cards = FileAccess.get_file_as_string("res://Settings/cards_movement.txt")
 	var cards_set = JSON.parse_string(cards)
 	
 	for skill in range(start_in_inv/ max_on_hand): 
@@ -36,7 +36,7 @@ func start():
 	
 	
 	
-	cards = FileAccess.get_file_as_string("res://Cards/card.txt")
+	cards = FileAccess.get_file_as_string("res://Settings/card.txt")
 	cards_set = JSON.parse_string(cards)
 	
 	for skill in range(start_in_inv - start_in_inv/ max_on_hand):

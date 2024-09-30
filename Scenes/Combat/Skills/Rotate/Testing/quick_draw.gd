@@ -11,9 +11,13 @@ var env_destroy = false
 var timer
 var destroy_at_end = false
 
+
+var danger_type = "moving" #static(like move, area circle) moving (like bullets)
+
 func _ready() -> void:
 	timer = get_tree().get_nodes_in_group("Timer")[0]
 	velocity = mov_vec * speed
+	$RotatePart.rotation = mov_vec.angle()
 
 func _physics_process(delta):
 	move_and_slide()
