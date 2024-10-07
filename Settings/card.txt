@@ -16,9 +16,12 @@
 			"effect": "res://Scenes/Combat/Effects/effect.tscn",
 			"effect_angle": "0",
 			"effect_keep_on_player": "false",
-			"enviroment destroy": "true",
+			"enviroment destroy": "0",
 			"range": "0",
-			"id": "001"
+			"id": "001",
+			"reset_dir": "false",
+			"is_custom_deceleration": "false",
+			"custom_deceleration" : "0"
 			
 		},
 		
@@ -29,7 +32,7 @@
 			"type": "rotate",
 			"player_toss": "-250",
 			"skill": "res://Scenes/Combat/Skills/Rotate/Testing/quick_draw.tscn",
-			"skill_speed": "100",
+			"skill_speed": "700",
 			"amount": "3",
 			"spread": "10",
 			"enemy_toss": "200",
@@ -38,9 +41,12 @@
 			"effect": "res://Scenes/Combat/Effects/effect.tscn",
 			"effect_angle": "0",
 			"effect_keep_on_player": "false",
-			"enviroment destroy": "false",
+			"enviroment destroy": "0",
 			"range": "0",
-			"id": "002"
+			"id": "002",
+			"reset_dir": "false",
+			"is_custom_deceleration": "false",
+			"custom_deceleration" : "0"
 			
 		},
 	"move skill":
@@ -59,9 +65,12 @@
 			"effect": "None",
 			"effect_angle": "0",
 			"effect_keep_on_player": "false",
-			"enviroment destroy": "false",
+			"enviroment destroy": "0",
 			"range": "400",
-			"id": "003"
+			"id": "003",
+			"reset_dir": "false",
+			"is_custom_deceleration": "false",
+			"custom_deceleration" : "0"
 		},
 		
 	"null skill":
@@ -80,8 +89,35 @@
 			"effect": "None",
 			"effect_angle": "0",
 			"effect_keep_on_player": "false",
-			"enviroment destroy": "false",
+			"enviroment destroy": "0",
 			"range": "400",
-			"id": "004"
+			"id": "004",
+			"reset_dir": "false",
+			"is_custom_deceleration": "false",
+			"custom_deceleration" : "0"
+		},
+		"Melee":
+		{
+			"title": "Melee attack",
+			"description": "Testing a melee attack",
+			"type": "rotate",
+			"player_toss": "500",
+			"skill": "res://Scenes/Combat/Skills/Rotate/Testing/melee_skill.tscn",
+			"skill_speed": "0",
+			"amount": "1",
+			"spread": "0",
+			"enemy_toss": "400",
+			"damage": "5",
+			"recovery_time": "0.6",
+			"effect": "None",
+			"effect_angle": "0",
+			"effect_keep_on_player": "false",
+			"enviroment destroy": "0",
+			"range": "0",
+			"id": "007",
+			"reset_dir": "true",
+			"is_custom_deceleration": "false",
+			"custom_deceleration" : "0"
+			
 		}
 }

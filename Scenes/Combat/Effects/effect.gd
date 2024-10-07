@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if keep_target:
+	if keep_target in get_tree().get_nodes_in_group("Entity"):
 		global_position = keep_target.global_position
 
 

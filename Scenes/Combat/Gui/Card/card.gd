@@ -48,6 +48,13 @@ func rotate_card(entity_load, direction, len_strength):
 		combat_world.add_child(eff)
 	
 	
+	if text_set[17] == "true":
+		entity.dir_current = Vector2(0,0)
+		entity.speed = 0
+		
+	if text_set[18] == "true":
+		entity.set_custom_deceleration(int(text_set[18]))
+		
 	if int(text_set[3]) > 0:
 		entity.dir = direction
 		entity.speed += len_strength * int(text_set[3])
@@ -72,8 +79,9 @@ func rotate_card(entity_load, direction, len_strength):
 			set_area_collision(skill_instance)
 			skill_instance.toss = int(text_set[8])
 			skill_instance.damage = int(text_set[9])
-			if text_set[14] == "true":
-				skill_instance.env_destroy = true
+			skill_instance.env_destroy_index = int(text_set[14])
+			
+			skill_instance.entity = entity
 			
 			combat_world.add_child(skill_instance)
 			
@@ -114,6 +122,6 @@ func null_card(entity_load):
 
 func set_area_collision(inst_skill):
 	if entity in player_nodes:
-		inst_skill.get_node("Area2D").collision_mask = 10 #enemy and world
+		inst_skill.get_node("RotatePart/Area2D").collision_mask = 10 #enemy and world
 	else:
-		inst_skill.get_node("Area2D").collision_mask = 6 #player and world
+		inst_skill.get_node("RotatePart/Area2D").collision_mask = 6 #player and world

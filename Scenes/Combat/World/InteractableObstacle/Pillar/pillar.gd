@@ -12,10 +12,10 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent().env_destroy:
+	if area.get_parent().get_parent().env_destroy_index != 0:
 		$Area2D.queue_free()
 		$Sprite2D2.visible = false #change later
 		collision_layer = 16
 		
-	area.get_parent().destroy()
+	area.get_parent().interactable_enviroment_hit()
 	

@@ -1,0 +1,168 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfa2w3wqf7m0q"]
+
+[ext_resource type="Script" path="res://Scenes/Combat/Skills/Rotate/Testing/melee_skill.gd" id="1_ykfjl"]
+[ext_resource type="Texture2D" uid="uid://yaa5hx73fa83" path="res://Assets/whiteCircle.png" id="2_5ypui"]
+
+[sub_resource type="Animation" id="Animation_j1ody"]
+resource_name = "start"
+length = 0.5
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RotatePart/Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(62, -0.25, 0, 0.3, 26.4321, 61, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RotatePart/Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-62, -0.25, 0, 0.1, -66.7325, 69, -0.4, 20.2108, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RotatePart/Sprite2D:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.05, -0.25, 0, 0.1, 0.0194823, 0.6, -0.1, 0.307255, 0.05, -0.354515, 0.05, -0.1, -0.00867815, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RotatePart/Sprite2D:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.05, -0.25, 0, 0.1, 0.0194823, 0.6, -0.1, 0.300215, 0.05, -0.340435, 0.05, -0.15, 0.0617229, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RotatePart/Area2D:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.25, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_k6jr5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RotatePart/Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(62, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RotatePart/Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-62, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RotatePart/Sprite2D:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.110786, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RotatePart/Sprite2D:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.110786, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RotatePart/Area2D:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hrrhu"]
+_data = {
+"RESET": SubResource("Animation_k6jr5"),
+"start": SubResource("Animation_j1ody")
+}
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6d8a6"]
+points = PackedVector2Array(70, -60, 90, 0, 70, 60, 0, 0)
+
+[node name="MeleeSkill" type="Node2D"]
+script = ExtResource("1_ykfjl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hrrhu")
+}
+autoplay = "start"
+
+[node name="RotatePart" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="RotatePart"]
+collision_layer = 32
+collision_mask = 10
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RotatePart/Area2D"]
+shape = SubResource("ConvexPolygonShape2D_6d8a6")
+
+[node name="DangerArea" type="Area2D" parent="RotatePart"]
+visible = false
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RotatePart/DangerArea"]
+shape = SubResource("ConvexPolygonShape2D_6d8a6")
+
+[node name="Sprite2D" type="Sprite2D" parent="RotatePart"]
+position = Vector2(62, -62)
+scale = Vector2(0.110786, 0.110786)
+texture = ExtResource("2_5ypui")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_shape_entered" from="RotatePart/Area2D" to="." method="_on_area_2d_area_shape_entered"]

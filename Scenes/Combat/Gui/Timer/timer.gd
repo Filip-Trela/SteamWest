@@ -19,12 +19,15 @@ var target_time:float
 
 var disable = true
 
+var player
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	custom_ready()
 
 func custom_ready():
+	player = get_tree().get_first_node_in_group("Player")
 	director = get_tree().get_nodes_in_group("Director")
 	director = director[0]
 	
@@ -45,8 +48,13 @@ func _process(delta: float) -> void:
 			
 			director.next_turn()
 			timer.paused = true
-			paused = true
 			disable = true
+			player.deceleration_custom_is = false
+			player.deceleration_custom = 0
+			paused = true
+			
+			
+			
 	if disable:
 		for effect in get_tree().get_nodes_in_group("Effect"):
 			effect["process_mode"] = Node.PROCESS_MODE_DISABLED

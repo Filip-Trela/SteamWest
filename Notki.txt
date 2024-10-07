@@ -1,33 +1,18 @@
 WSZYSTKO MA SKUPIAC SIE GLOWNIE NA KSZTALTACH
 
 TODOS:
-	ogarnac move DONE oraz null skille
+	timera zmienic na cos co bylo w endless train (plynne przejscia z stop w start)
 	
-	poswiata playera DONE
+	ogarnac pliki txt dla enemy, ich setting tzw. W nich ich karty oraz id,
+	statystyki, zdrowie tarcze etc
 	
-	po zakonczeniu stage'a cos sie dzieje ~~
+	poprawic poswiate ruchu playera, ale o wiele pozniej
 	
 	status efekty, dawane do entity,ktore gdy instancjonowane zmieniaja parametry,
 	maja timer, po uplywie czasu wraca entity do normalnosci i status jest usuwany
 	
 	trzymajac input na enemy mozna wyswietlic karte, pokazuje ona zdrowie, tarcze efekty
 	i miniaturke ~~
-	
-	postacie, enviroment, efekty i wszystko in world jest zbudowane z kilku
-	bialych sprite'ow, ktore beda mialy pozniej zmieniane visibility RGB,
-	aby byla rozna kolorystyka dla wszystkiego ~~DONE
-	
-	custom klasy dla sprite i animated sprite, aby mialy grupy gdzie mozna wybrac
-	ktory typ z palety barw ma wybrac. dodac je do grup
-	dodatkowo pod director dac colorDirector.
-	jest to wszystko rozlozone, brakuje tylko assetow, match w color director DONE
-	
-	
-	
-	
-	
-	zmienic w menu button na taki co dziala mobilnie, aktualny nie dziala,
-	wzorowac sie na handlerach etc
 	
 	bardziej zaawansowane dzialenie skilli na entity
 	troche niech przypomina z endless train gdzie:
@@ -42,10 +27,9 @@ TODOS:
 	dla strzalow i innych skilli nalezy poprawic visual part pozycje,
 	powinna byc wyzej, bedzie sie pierdzielic z y sort
 	
-	cos na pewno z inputem poprawic bo cos nie pasuje notdone
-	
 	typy atakow:
 		strzal GIT
+		melee ataki
 		uderzenie
 		null tylko instancjuje
 		move tylko instancjuje
@@ -58,9 +42,7 @@ TODOS:
 	tiery kart
 	
 	swiat bedzie trzeba zapewne dodawac wlasnorecznie
-	
-	markery sort -1 aby byly pod postaciami i innymi rzeczami
-	
+		
 	##enemy ai:
 		-bazujac na kartach wybiera opcje dla siebie
 		-gdy przytrzymasz na nim input, wyswietla karte ktora chce uzyc
@@ -68,22 +50,47 @@ TODOS:
 		-gdy ginie nie znika, dopiero przy zmianie stage'a
 
 
-ogarnac matematycznie: ile czasu i w jakiej predkosci aby przebyl dana odleglosc
+ogarnac matematycznie: ile czasu i w jakiej predkosci aby przebyl dana odleglosc DONE
 
 ENEMY AI:
-	na poczatku ogarnac moze tilemap, jak one dzialaja etc
-	jak umieszczac obiekty + nawigacje w tym
-	
-	wiedza gdzie jest player caly czas
-	skille maja area2d danger area, z ktorych enemy probuja wyjsc
-	ten podstawowy enemy bedzie dumb enemy
-	stworzyc enemy ktory tylko idzie do playera
-	stworzyc enemy ktory atakuje melee
-	stworzyc enemy ktory strzela
+	typy kart enemy:
+		moving skills
+		shooting skills
+		melee skills
+		self buffs
+		debuff skills
+
+
+Typy wrogow:
+	close range fighter
+	mid range fighter
+	far range fighter
+	close & mid range fighter
+	kamikadze
+	defender
+	buffer/healer
+	debuffer
+	charger
+	trickster (dodges and debuffs, weak attacks)
+	close range specialist
+	coward mid range fighter
+
+MAPKI PROBNE:
+	metro z pociagami ktore moga zabic lub powaznie skrzywdzic
+	komnata z filarami
+	most na ktorym mozna zniszczyc barierki
+	pociag
+
+TYPY GIER:
+	journey (ustawione default mapy bez randomizacji)
+	choose map
+	harder
+	journey(random mapy na podstawie ich tieru, nowi wrogowie i nowi bossowie)
+	long journey
 
 
 
-	
-	
 DONE AND TO REMEBER:
 	wiekszosc shuffling cards jest w deck, director. card uzywa used card z deck
+
+	markery sort -1 aby byly pod postaciami i innymi rzeczami

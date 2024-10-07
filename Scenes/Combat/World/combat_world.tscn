@@ -88,20 +88,29 @@ texture = ExtResource("1_hawm4")
 [node name="CombatCamera" parent="." instance=ExtResource("3_y6e61")]
 position = Vector2(360, 324)
 
-[node name="TopCorner" type="Node2D" parent="."]
+[node name="TopCornerCamera" type="Node2D" parent="."]
 position = Vector2(360, 400)
 
-[node name="BottomCorner" type="Node2D" parent="."]
+[node name="BottomCornerCamera" type="Node2D" parent="."]
 position = Vector2(360, 1100)
+
+[node name="Top" type="Node2D" parent="."]
+position = Vector2(360, 0)
+
+[node name="Bottom" type="Node2D" parent="."]
+position = Vector2(360, 1490)
+
+[node name="Left" type="Node2D" parent="."]
+position = Vector2(0, 745)
+
+[node name="Right" type="Node2D" parent="."]
+position = Vector2(720, 745)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_kyrho")
 
 [node name="Y_sort" type="Node2D" parent="NavigationRegion2D" groups=["Y_Sort_World"]]
 y_sort_enabled = true
-
-[node name="Player" parent="NavigationRegion2D/Y_sort" instance=ExtResource("2_fvce4")]
-position = Vector2(487, 548)
 
 [node name="Walls" type="StaticBody2D" parent="NavigationRegion2D/Y_sort"]
 position = Vector2(246, 633)
@@ -155,4 +164,7 @@ position = Vector2(691, 419)
 position = Vector2(323, 1033)
 
 [node name="MidRangeEnemy" parent="NavigationRegion2D/Y_sort" instance=ExtResource("6_j0r5o")]
-position = Vector2(607, 955)
+position = Vector2(261, 610)
+
+[node name="Player" parent="NavigationRegion2D/Y_sort" instance=ExtResource("2_fvce4")]
+position = Vector2(210, 521)

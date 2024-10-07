@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Scenes/Combat/Skills/Rotate/Testing/quick_draw.gd" id="1_r40bw"]
 [ext_resource type="Texture2D" uid="uid://yaa5hx73fa83" path="res://Assets/whiteCircle.png" id="1_skqsl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pcjk5"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fkpeg"]
 radius = 18.0
 height = 164.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pcjk5"]
 
 [node name="QuickDraw" type="CharacterBody2D" groups=["Skill"]]
 collision_layer = 0
@@ -26,13 +26,6 @@ position = Vector2(0, -23)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_skqsl")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 10
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_pcjk5")
-
 [node name="RotatePart" type="Node2D" parent="."]
 
 [node name="DangerArea" type="Area2D" parent="RotatePart"]
@@ -44,5 +37,12 @@ position = Vector2(62, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_fkpeg")
 
-[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Area2D" type="Area2D" parent="RotatePart"]
+collision_layer = 32
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RotatePart/Area2D"]
+shape = SubResource("CircleShape2D_pcjk5")
+
+[connection signal="area_shape_entered" from="RotatePart/Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="RotatePart/Area2D" to="." method="_on_area_2d_body_entered"]

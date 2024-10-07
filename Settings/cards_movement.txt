@@ -9,12 +9,42 @@
 			"skill_speed": "0",
 			"amount": "0",
 			"spread": "0",
-			"enemy_toss": "100",
+			"enemy_toss": "0",
 			"damage": "0",
 			"recovery_time": "0.4",
 			"effect": "res://Scenes/Combat/Effects/QuickStep/quick_step.tscn",
 			"effect_angle": "180",
 			"effect_keep_on_player": "true",
-			"id": "005"
+			"enviroment destroy": "0",
+			"range": "0",
+			"id": "005",
+			"reset_dir": "false",
+			"is_custom_deceleration": "false",
+			"custom_deceleration" : "0"
 		},
+		
+		"QuickStep":
+		{
+			"title": "Quick Step",
+			"description": "Stop, decide and dodge",
+			"type": "rotate",
+			"player_toss": "300",
+			"skill": "null",
+			"skill_speed": "0",
+			"amount": "1",
+			"spread": "0",
+			"enemy_toss": "200",
+			"damage": "5",
+			"recovery_time": "0.3",
+			"effect": "res://Scenes/Combat/Effects/QuickStep/quick_step.tscn",
+			"effect_angle": "180",
+			"effect_keep_on_player": "false",
+			"enviroment destroy": "0",
+			"range": "0",
+			"id": "006",
+			"reset_dir": "true",
+			"is_custom_deceleration": "true",
+			"custom_deceleration" : "0"
+			
+		}
 }

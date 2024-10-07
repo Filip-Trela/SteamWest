@@ -6,13 +6,13 @@ var speed = 700
 
 var toss
 var damage
-var env_destroy = false
+var env_destroy_index
 
 var timer
-var destroy_at_end = false
 
 
 var danger_type = "moving" #static(like move, area circle) moving (like bullets)
+var entity
 
 func _ready() -> void:
 	timer = get_tree().get_nodes_in_group("Timer")[0]
@@ -27,8 +27,7 @@ func _physics_process(delta):
 func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	var enemy = area.get_parent()
 	
-	enemy.mov_vec = mov_vec * toss
-	enemy.take_damage(damage)
+	enemy.take_damage(damage, mov_vec, toss)
 	destroy()
 
 #for walls etc
@@ -38,3 +37,8 @@ func _on_area_2d_body_entered(body):
 
 func destroy():
 	queue_free()
+
+func interactable_enviroment_hit():
+	env_destroy_index -= 1
+	if env_destroy_index <1:
+		destroy()

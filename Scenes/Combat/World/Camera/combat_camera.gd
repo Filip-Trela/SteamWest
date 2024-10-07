@@ -2,8 +2,8 @@ extends Node2D
 
 var player
 
-@onready var top = get_parent().get_node("TopCorner") # 400
-@onready var bottom = get_parent().get_node("BottomCorner") #500
+@onready var top = get_parent().get_node("TopCornerCamera") # 400
+@onready var bottom = get_parent().get_node("BottomCornerCamera") #500
 
 var y_pos
 
